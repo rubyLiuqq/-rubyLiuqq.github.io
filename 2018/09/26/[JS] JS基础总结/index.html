@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Vue知识点总结 | Hexo</title>
-  <meta name="description" content="1、Vue nextTick 使用原因Vue批量挂起DOM更新并异步应用它们以防止由多个数据突变导致的不必要的重新呈现。在实践中我们经常不得不Vue.nextTick等待Vue在我们触发某些状态更改之后执行实际的DOM更新。 2、Vue实现数据双向绑定的原理：Object.defineProperty()">
-<meta name="keywords" content="git">
+  <title>JS基础总结 | Hexo</title>
+  <meta name="description" content="目录：一、JS 中的数据类型二、JS 中类型检测三、$.extend()和$.fn.extend()四、jquery的事件绑定on、bind、dele五、defer和async六、module.exports和export的区别七、Promise八、JS中正则表达式的使用 一、JS 中的数据类型JavaScript 有 5 种简单数据类型：Undefined、Null、Boolean、Number">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue知识点总结">
-<meta property="og:url" content="http://yoursite.com/2018/09/06/vue知识点总结/index.html">
+<meta property="og:title" content="JS基础总结">
+<meta property="og:url" content="http://yoursite.com/2018/09/26/[JS] JS基础总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、Vue nextTick 使用原因Vue批量挂起DOM更新并异步应用它们以防止由多个数据突变导致的不必要的重新呈现。在实践中我们经常不得不Vue.nextTick等待Vue在我们触发某些状态更改之后执行实际的DOM更新。 2、Vue实现数据双向绑定的原理：Object.defineProperty()">
+<meta property="og:description" content="目录：一、JS 中的数据类型二、JS 中类型检测三、$.extend()和$.fn.extend()四、jquery的事件绑定on、bind、dele五、defer和async六、module.exports和export的区别七、Promise八、JS中正则表达式的使用 一、JS 中的数据类型JavaScript 有 5 种简单数据类型：Undefined、Null、Boolean、Number">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-25T08:26:01.000Z">
+<meta property="og:updated_time" content="2018-09-29T07:39:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue知识点总结">
-<meta name="twitter:description" content="1、Vue nextTick 使用原因Vue批量挂起DOM更新并异步应用它们以防止由多个数据突变导致的不必要的重新呈现。在实践中我们经常不得不Vue.nextTick等待Vue在我们触发某些状态更改之后执行实际的DOM更新。 2、Vue实现数据双向绑定的原理：Object.defineProperty()">
+<meta name="twitter:title" content="JS基础总结">
+<meta name="twitter:description" content="目录：一、JS 中的数据类型二、JS 中类型检测三、$.extend()和$.fn.extend()四、jquery的事件绑定on、bind、dele五、defer和async六、module.exports和export的区别七、Promise八、JS中正则表达式的使用 一、JS 中的数据类型JavaScript 有 5 种简单数据类型：Undefined、Null、Boolean、Number">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/09/06/vue知识点总结/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/09/26/[JS] JS基础总结/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -42,8 +42,6 @@
   <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="/css/style.css">
   
-    
-        <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
     
     
 
@@ -337,14 +335,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-vue知识点总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-[JS] JS基础总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Vue知识点总结
+      JS基础总结
     </h1>
   
 
@@ -352,28 +350,87 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/09/06/vue知识点总结/" class="article-date">
-	  <time datetime="2018-09-06T02:30:23.000Z" itemprop="datePublished">2018-09-06</time>
+	<a href="/2018/09/26/[JS] JS基础总结/" class="article-date">
+	  <time datetime="2018-09-26T06:48:21.000Z" itemprop="datePublished">2018-09-26</time>
 	</a>
 </span>
         
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/git/">git</a>
+	<a class="article-tag-link" href="/tags/JS/">JS</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/09/06/vue知识点总结/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/09/26/[JS] JS基础总结/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="1、Vue-nextTick-使用原因"><a href="#1、Vue-nextTick-使用原因" class="headerlink" title="1、Vue nextTick 使用原因"></a>1、Vue nextTick 使用原因</h3><p>Vue批量挂起DOM更新并异步应用它们以防止由多个数据突变导致的不必要的重新呈现。<br>在实践中我们经常不得不Vue.nextTick等待Vue在我们触发某些状态更改之后执行实际的DOM更新。</p>
-<h3 id="2、Vue实现数据双向绑定的原理：Object-defineProperty"><a href="#2、Vue实现数据双向绑定的原理：Object-defineProperty" class="headerlink" title="2、Vue实现数据双向绑定的原理：Object.defineProperty()"></a>2、Vue实现数据双向绑定的原理：Object.defineProperty()</h3>
+        <h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><p><a href="#一、JS中的数据类型">一、JS 中的数据类型</a><br><a href="#二、JS中类型检测">二、JS 中类型检测</a><br><a href="#三、-extend和-fn-extend">三、$.extend()和$.fn.extend()</a><br><a href="#四、jquery的事件绑定on、bind、dele">四、jquery的事件绑定on、bind、dele</a><br><a href="#五、defer和async">五、defer和async</a><br><a href="#六、module-exports和export的区别">六、module.exports和export的区别</a><br><a href="#七、Promise">七、Promise</a><br><a href="#八、JS中正则表达式的使用">八、JS中正则表达式的使用</a></p>
+<h3 id="一、JS-中的数据类型"><a href="#一、JS-中的数据类型" class="headerlink" title="一、JS 中的数据类型"></a>一、JS 中的数据类型</h3><p>JavaScript 有 5 种简单数据类型：Undefined、Null、Boolean、Number、String 和 1 种复杂数据类型 Object 。<br>基本类型（值类型）：Undefined、Null、Boolean、Number、String<br>复杂类型（引用类型）：Object、Array、Date、RegExp、Function、基本包装类型（Boolean | Number | String）、单体内置对象（Global | Math）。<br>类型检测：typeof、instanceof、<code>Object.prototype.toString.call()</code>；</p>
+<blockquote>
+<p><strong>值类型与引用类型的差别:</strong></p>
+<ul>
+<li>基本类型在内存中占据固定大小的空间，因此被保存在栈内存中;</li>
+<li>从一个变量向另一个变量复制基本类型的值，复制的是值的副本;</li>
+<li>引用类型的值是对象，保存在堆内存;</li>
+<li>包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的指针;</li>
+<li>从一个变量向另一个变量复制引用类型的值的时候，复制是引用指针，因此两个变量最终都指向同一个对象。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="二、JS中类型检测"><a href="#二、JS中类型检测" class="headerlink" title="二、JS中类型检测"></a>二、JS中类型检测</h3><p>在JavaScript里使用typeof判断数据类型，只能区分基本类型，即：<code>number</code>、<code>string</code>、<code>undefined</code>、<code>boolean</code>、<code>object</code>。<br>对于<code>null</code>、<code>array</code>、<code>function</code>、<code>object</code>来说，使用typeof都会统一返回object字符串。</p>
+<p>要想区分对象、数组、函数、单纯使用typeof是不行的。在JS中，可以通过<code>Object.prototype.toString</code>方法，判断某个对象之属于哪种内置类型。分为null、string、boolean、number、undefined、RegExp、array、function、object、date、math。</p>
+<p>判断原生JSON对象: <code>window.JSON &amp;&amp; Object.prototype.toString.call(JSON)</code> 输出结果为”[object JSON]”说明JSON是原生的，否则不是。<br><strong>注意：Object.prototpye.toString()本身也可能会被修改</strong></p>
+<p>对于自定义的函数，可以使用 instanceof判断，判断一个实例是否属于某种类型。<code>console.log(person instanceof Person);</code></p>
+<hr>
+<h3 id="三、-extend和-fn-extend"><a href="#三、-extend和-fn-extend" class="headerlink" title="三、$.extend和$.fn.extend"></a>三、$.extend和$.fn.extend</h3><ol>
+<li><p><code>extend(dest,src1,src2,src3...)</code>: 将src1,src2,src3…合并到dest中,返回值为合并后的dest,修改了dest的结构。<br> <code>$.extend({},src1,src2,src3...)</code>  // 也就是将”{}”作为dest参数，不修改dest的结构。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。</span></span><br><span class="line">$.extend(&#123;&#125;,&#123;<span class="attr">name</span>:<span class="string">"Tom"</span>,<span class="attr">age</span>:<span class="number">21</span>&#125;,&#123;<span class="attr">name</span>:<span class="string">"Jerry"</span>,<span class="attr">sex</span>:<span class="string">"Boy"</span>&#125;); <span class="comment">// &#123;name:"Jerry",age:21,sex:"Boy"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>省略 dest 参数<br><code>$.extend(src)</code>: 将src合并到jquery的全局对象中去。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将hello方法合并到jquery的全局对象中</span></span><br><span class="line">$.extend(&#123;</span><br><span class="line">    hello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>$.fn.extend(src): 将src合并到jquery的实例对象中去 (<strong>$.fn=jquery.prototype</strong>)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是在jquery全局对象中扩展一个net命名空间。</span></span><br><span class="line">$.extend(&#123;<span class="attr">net</span>:&#123;&#125;&#125;);</span><br><span class="line">　　 </span><br><span class="line"><span class="comment">// 这是将hello方法扩展到之前扩展的Jquery的net命名空间中去</span></span><br><span class="line">$.extend($.net, &#123;</span><br><span class="line">    hello:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'hello'</span>);&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extend方法还有一个重载原型：<br><code>extend(boolean,dest,src1,src2,src3...)</code>: boolean代表是否进行深度拷贝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result=$.extend( <span class="literal">true</span>, &#123;&#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>:<span class="string">"John"</span>, <span class="attr">location</span>: &#123;<span class="attr">city</span>: <span class="string">"Boston"</span>,<span class="attr">county</span>:<span class="string">"USA"</span>&#125; &#125;,</span><br><span class="line">    &#123; <span class="attr">last</span>:<span class="string">"Resig"</span>, <span class="attr">location</span>: &#123;<span class="attr">state</span>: <span class="string">"MA"</span>,<span class="attr">county</span>:<span class="string">"China"</span>&#125; &#125; );</span><br><span class="line"><span class="comment">//  result = &#123;name:"John",last:"Resig",location:&#123;city:"Boston",state:"MA",county:"China"&#125;&#125;</span></span><br><span class="line"><span class="keyword">var</span> result=$.extend( <span class="literal">false</span>, &#123;&#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>:<span class="string">"John"</span>, <span class="attr">location</span>:&#123;<span class="attr">city</span>: <span class="string">"Boston"</span>,<span class="attr">county</span>:<span class="string">"USA"</span>&#125; &#125;,</span><br><span class="line">    &#123; <span class="attr">last</span>:<span class="string">"Resig"</span>, <span class="attr">location</span>: &#123;<span class="attr">state</span>: <span class="string">"MA"</span>,<span class="attr">county</span>:<span class="string">"China"</span>&#125; &#125;);</span><br><span class="line"><span class="comment">// result = &#123;name:"John",last:"Resig",location:&#123;state:"MA",county:"China"&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h3 id="四、jquery的事件绑定on、bind、dele"><a href="#四、jquery的事件绑定on、bind、dele" class="headerlink" title="四、jquery的事件绑定on、bind、dele"></a>四、jquery的事件绑定on、bind、dele</h3><ol>
+<li>sdas</li>
+</ol>
+<hr>
+<h3 id="五、defer和async"><a href="#五、defer和async" class="headerlink" title="五、defer和async"></a>五、defer和async</h3><p>defer可以让脚本在文档完全呈现之后再执行，延迟脚本总是按照指定它们的顺序执行。<br>async可表示当前脚本不必等待其他脚本，也不必阻塞文档呈现。不能保证异步脚本按照它们在页面中出现的顺序执行。</p>
+<hr>
+<h3 id="六、module-exports和export的区别"><a href="#六、module-exports和export的区别" class="headerlink" title="六、module.exports和export的区别"></a>六、module.exports和export的区别</h3><p>模块化：公共代码抽离成为一个单独的js文件，作为一个模块，模块只有通过module.exports 和 exports 才能对外暴露接口。<br>区别：</p>
+<ul>
+<li>exports 是指向的module.exports 的引用；</li>
+<li>module.exports 初始值为一个空对象{}，所以exports 初始值也是{}；</li>
+<li>require() 返回的是module.exports 而不是exports。</li>
+</ul>
+<h3 id="七、Promise"><a href="#七、Promise" class="headerlink" title="七、Promise"></a>七、Promise</h3><p>Promise代表了某个未来才会知道结果的事件（通常是一个异步操作），可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。<br>Promise对象有三种状态：pending状态（ 等待中），fulfilled状态（操作完成的状态），rejected状态（操作失败的状态），状态不受外界影响，一旦状态改变，就不会再变。</p>
+<p>基本的API有：<br>    <code>Promise.resolve()</code><br>    <code>Promise.reject()</code><br>    <code>Promise.prototype.then()</code><br>    <code>Promise.prototype.catch()</code><br>    <code>Promise.all()</code><br>    <code>Promise.race()</code></p>
+<p>常见使用场景：ajax请求，定时器，数据验证，动画结束回调，多重回调解耦等。</p>
+<hr>
+<h3 id="八、JS中正则表达式的使用"><a href="#八、JS中正则表达式的使用" class="headerlink" title="八、JS中正则表达式的使用"></a>八、JS中正则表达式的使用</h3><ol>
+<li><code>String.prototype.search</code>方法。eg：”abchello”.search(/hello/); // 3</li>
+<li><code>String.prototype.replace</code>方法。eg：”abchello”.replace(/hello/,”hi”); // “abchi”</li>
+<li><code>String.prototype.split</code>方法。 eg: “abchelloasdasdhelloasd”.split(/hello/); //[“abc”, “asdasd”, “asd”]</li>
+<li><code>String.prototype.match</code>方法。 eg:<br>用来捕获字符串中的子字符串到一个数组中。<strong>默认情况下只捕获一个结果到数组中</strong>。<br>eg：  “abchelloasdasdhelloasd”.match(/hello/);  //[“hello”]<br>  “abchelloasdasdhelloasd”.match(/hello/g);  //[“hello”,”hello”]</li>
+<li><p><code>RegExp.prototype.exec</code>方法。<br>1、exec方法一次只能捕获一份子字符串到数组中，无论正则表达式是否有全局属性<br>eg: <code>/hello/g.exec(&quot;abchelloasdasdhelloasd&quot;);</code> // [“hello”]<br>2、正则表达式对象有一个lastIndex属性，用来表示下一次从哪个位置开始捕获，每一次执行exec方法后，lastIndex就会往后推，直到找不到匹配的字符返回null，然后又从头开始捕获。 这个属性可以用来遍历捕获字符串中的子串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg=<span class="regexp">/hello/g</span>;</span><br><span class="line">reg.lastIndex; <span class="comment">//0</span></span><br><span class="line">reg.exec(<span class="string">"abchelloasdasdhelloasd"</span>); <span class="comment">// ["hello"]</span></span><br><span class="line">reg.lastIndex; <span class="comment">//8</span></span><br><span class="line">reg.exec(<span class="string">"abchelloasdasdhelloasd"</span>); <span class="comment">// ["hello"]</span></span><br><span class="line">reg.lastIndex; <span class="comment">//19</span></span><br><span class="line">reg.exec(<span class="string">"abchelloasdasdhelloasd"</span>); <span class="comment">// null</span></span><br><span class="line">reg.lastIndex; <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>RegExp.prototype.test</code>方法: 用来测试字符串中是否含有子字符串<br>eg: /hello/.test(“abchello”); // true</p>
+</li>
+</ol>
+
       
     </div>
     <!-- <div class="article-footer">
@@ -382,7 +439,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/09/06/vue知识点总结/" title="Vue知识点总结" target="_blank" rel="external">http://yoursite.com/2018/09/06/vue知识点总结/</a>
+      <a href="http://yoursite.com/2018/09/26/[JS] JS基础总结/" title="JS基础总结" target="_blank" rel="external">http://yoursite.com/2018/09/26/[JS] JS基础总结/</a>
     </li>
     
     
@@ -429,12 +486,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/09/06/git 命令/" title="git 命令"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/09/26/[JS] JS高级程序设计/" title="JS高级程序设计"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2018/09/06/[JS] JS 函数式编程指南/" title="JS 函数式编程指南"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/09/12/[CSS] CSS3 单位/" title="CSS3 单位汇总"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
