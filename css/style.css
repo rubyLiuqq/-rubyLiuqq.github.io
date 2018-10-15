@@ -5790,7 +5790,7 @@ body.no-sidebar .sidebar {
 
 .main .content {
   min-height: 85vh;
-  font-family: consolas,Menlo,"PingFang SC","Microsoft YaHei",monospace;
+  font-family: Merriweather,serif, consolas,Menlo,"PingFang SC","Microsoft YaHei",monospace;
 }
 
 .main.has-sticky .content {
@@ -9088,7 +9088,7 @@ body.okayNav-loaded {
 p {
   line-height: 1.9em;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 pre {
@@ -9116,7 +9116,7 @@ pre {
 	height: 14px;
 	background: #ff5f56;
 	border-radius: 50%;
-	margin: 10px;conten
+	margin: 10px;
 	box-shadow: 22px 0 0 #ffbd2e, 44px 0 0 #27c93f;
   }
 
@@ -9240,7 +9240,8 @@ pre {
   }
 
   pre {
-	color: #000 !important;
+    font-family: Menlo;
+	  color: #333 !important;
   }
 
   pre .function .keyword,
