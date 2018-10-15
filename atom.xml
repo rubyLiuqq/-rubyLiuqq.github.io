@@ -236,6 +236,24 @@
   </entry>
   
   <entry>
+    <title>parceljs &amp; webpack</title>
+    <link href="http://yoursite.com/2018/09/28/%5B%E6%9E%84%E5%BB%BA%5D%20parceljs%20&amp;%20webpack/"/>
+    <id>http://yoursite.com/2018/09/28/[构建] parceljs &amp; webpack/</id>
+    <published>2018-09-28T06:29:31.000Z</published>
+    <updated>2018-10-08T02:21:31.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="构建" scheme="http://yoursite.com/categories/%E6%9E%84%E5%BB%BA/"/>
+    
+    
+      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端工程化</title>
     <link href="http://yoursite.com/2018/09/28/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
     <id>http://yoursite.com/2018/09/28/前端工程化/</id>
@@ -257,24 +275,6 @@
     
     
       <category term="web" scheme="http://yoursite.com/tags/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>parceljs &amp; webpack</title>
-    <link href="http://yoursite.com/2018/09/28/%5B%E6%9E%84%E5%BB%BA%5D%20parceljs%20&amp;%20webpack/"/>
-    <id>http://yoursite.com/2018/09/28/[构建] parceljs &amp; webpack/</id>
-    <published>2018-09-28T06:29:31.000Z</published>
-    <updated>2018-10-08T02:21:31.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="构建" scheme="http://yoursite.com/categories/%E6%9E%84%E5%BB%BA/"/>
-    
-    
-      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
     
   </entry>
   
