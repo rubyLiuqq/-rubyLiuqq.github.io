@@ -18,18 +18,18 @@
   
   
   <title>webpack 入门 | Hexo</title>
-  <meta name="description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。CommonJS 的缺点在于这样的代码无法">
+  <meta name="description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。  CommonJS 的缺点在于这样的代码">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack 入门">
 <meta property="og:url" content="http://yoursite.com/2018/09/28/[构建] webpack入门/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。CommonJS 的缺点在于这样的代码无法">
+<meta property="og:description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。  CommonJS 的缺点在于这样的代码">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-17T16:45:15.820Z">
+<meta property="og:updated_time" content="2018-10-17T16:49:42.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 入门">
-<meta name="twitter:description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。CommonJS 的缺点在于这样的代码无法">
+<meta name="twitter:description" content="论述CommonJS 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。CommonJS 的优点在于：  代码可复用于 Node.js 环境下并运行，例如做同构应用； 通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。  CommonJS 的缺点在于这样的代码">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/09/28/[构建] webpack入门/index.html">
   
@@ -297,15 +297,17 @@
         <h2 id="论述"><a href="#论述" class="headerlink" title="论述"></a>论述</h2><p><code>CommonJS</code> 是一种使用广泛的 JavaScript 模块化规范，核心思想是通过 require 方法来同步地加载依赖的其他模块，通过 module.exports 导出需要暴露的接口。<br><code>CommonJS</code> 的优点在于：</p>
 <ul>
 <li>代码可复用于 Node.js 环境下并运行，例如做同构应用；</li>
-<li>通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。<br><code>CommonJS</code> 的缺点在于这样的代码无法直接运行在浏览器环境下，必须通过工具转换成标准的 ES5。</li>
+<li>通过 NPM 发布的很多第三方模块都采用了 CommonJS 规范。</li>
 </ul>
+<p><code>CommonJS</code> 的缺点在于这样的代码无法直接运行在浏览器环境下，必须通过工具转换成标准的 ES5。</p>
 <p><code>AMD</code> 也是一种 JavaScript 模块化规范，与 CommonJS 最大的不同在于它采用异步的方式去加载依赖的模块。 AMD 规范主要是为了解决针对浏览器环境的模块化问题，最具代表性的实现是 requirejs。<br><code>AMD</code> 的优点在于：</p>
 <ul>
 <li>可在不转换代码的情况下直接在浏览器中运行；</li>
 <li>可异步加载依赖；</li>
 <li>可并行加载多个依赖；</li>
-<li>代码可运行在浏览器环境和 Node.js 环境下。<br><code>AMD</code> 的缺点在于JavaScript 运行环境没有原生支持 AMD，需要先导入实现了 AMD 的库后才能正常使用。</li>
+<li>代码可运行在浏览器环境和 Node.js 环境下。</li>
 </ul>
+<p><code>AMD</code> 的缺点在于JavaScript 运行环境没有原生支持 AMD，需要先导入实现了 AMD 的库后才能正常使用。</p>
 <p><code>TypeScript</code> 的缺点在于语法相对于 JavaScript 更加啰嗦，并且无法直接运行在浏览器或 Node.js 环境下。<br><code>Flow</code> 也是 JavaScript 的一个超集，它的主要特点是为 JavaScript 提供静态类型检查，和 TypeScript 相似但更灵活，可以让你只在需要的地方加上类型检查。</p>
 <h2 id="构建工具"><a href="#构建工具" class="headerlink" title="构建工具"></a>构建工具</h2><p>构建就是做这件事情，把源代码转换成发布到线上的可执行 JavaScrip、CSS、HTML 代码，包括如下内容。</p>
 <ul>
@@ -465,7 +467,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/09/28/[构建] webpack进阶/" title="webpack进阶"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/09/28/[构建] webpack进阶/" title="webpack 进阶"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
