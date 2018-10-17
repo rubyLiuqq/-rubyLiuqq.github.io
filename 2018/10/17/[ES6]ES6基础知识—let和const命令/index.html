@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Object 创建/修改/获取属性的方法 | Hexo</title>
-  <meta name="description" content="Object.defineProperty(obj, prop, descriptor)会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。若不指定configurable, writable, enumerable ，则这些属性默认值为false；若不指定value, get, set，则这些属性默认值为undefined。  obj: 需要被操作的目标对象 prop">
-<meta name="keywords" content="JS">
+  <title>ES6基础知识 — let和const命令 | Hexo</title>
+  <meta name="description" content="1、let和const的性质2、块级作用域3、顶层对象的属性4、global 对象 1、let和const的性质1、let、const声明的变量只在声明所在的块级作用域内有效；const 一旦声明变量，就必须立即初始化，不能留到以后赋值。2、不存在变量提升；3、暂时性死区: 在代码块内，只能在声明的位置后面使用；4、不允许在相同作用域内，重复声明同一个变量； 对于简单类型的数据（数值、字符串、布尔">
+<meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object 创建&#x2F;修改&#x2F;获取属性的方法">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/[JS] 创建、修改、获取属性的方法/index.html">
+<meta property="og:title" content="ES6基础知识 — let和const命令">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/[ES6]ES6基础知识—let和const命令/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Object.defineProperty(obj, prop, descriptor)会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。若不指定configurable, writable, enumerable ，则这些属性默认值为false；若不指定value, get, set，则这些属性默认值为undefined。  obj: 需要被操作的目标对象 prop">
+<meta property="og:description" content="1、let和const的性质2、块级作用域3、顶层对象的属性4、global 对象 1、let和const的性质1、let、const声明的变量只在声明所在的块级作用域内有效；const 一旦声明变量，就必须立即初始化，不能留到以后赋值。2、不存在变量提升；3、暂时性死区: 在代码块内，只能在声明的位置后面使用；4、不允许在相同作用域内，重复声明同一个变量； 对于简单类型的数据（数值、字符串、布尔">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T02:21:39.000Z">
+<meta property="og:updated_time" content="2018-10-17T13:29:59.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object 创建&#x2F;修改&#x2F;获取属性的方法">
-<meta name="twitter:description" content="Object.defineProperty(obj, prop, descriptor)会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。若不指定configurable, writable, enumerable ，则这些属性默认值为false；若不指定value, get, set，则这些属性默认值为undefined。  obj: 需要被操作的目标对象 prop">
+<meta name="twitter:title" content="ES6基础知识 — let和const命令">
+<meta name="twitter:description" content="1、let和const的性质2、块级作用域3、顶层对象的属性4、global 对象 1、let和const的性质1、let、const声明的变量只在声明所在的块级作用域内有效；const 一旦声明变量，就必须立即初始化，不能留到以后赋值。2、不存在变量提升；3、暂时性死区: 在代码块内，只能在声明的位置后面使用；4、不允许在相同作用域内，重复声明同一个变量； 对于简单类型的数据（数值、字符串、布尔">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/09/26/[JS] 创建、修改、获取属性的方法/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/10/17/[ES6]ES6基础知识—let和const命令/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -247,21 +247,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-defineProperty-obj-prop-descriptor"><span class="toc-number">1.</span> <span class="toc-text">Object.defineProperty(obj, prop, descriptor)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-defineProperties-obj-props"><span class="toc-number">2.</span> <span class="toc-text">Object.defineProperties(obj, props)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-getOwnPropertyDescriptor-obj-prop"><span class="toc-number">3.</span> <span class="toc-text">Object.getOwnPropertyDescriptor(obj, prop)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-getOwnPropertyDescriptors-obj-prop"><span class="toc-number">4.</span> <span class="toc-text">Object.getOwnPropertyDescriptors(obj, prop)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#补充说明"><span class="toc-number"></span> <span class="toc-text">补充说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#configrubale"><span class="toc-number">0.1.</span> <span class="toc-text">configrubale</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#enumerable"><span class="toc-number">0.2.</span> <span class="toc-text">enumerable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#writable"><span class="toc-number">0.3.</span> <span class="toc-text">writable</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#get-和-set"><span class="toc-number">0.4.</span> <span class="toc-text">get 和 set</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、let和const的性质"><span class="toc-number">1.</span> <span class="toc-text">1、let和const的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、块级作用域"><span class="toc-number">2.</span> <span class="toc-text">2、块级作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、顶层对象的属性"><span class="toc-number">3.</span> <span class="toc-text">3、顶层对象的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、global-对象"><span class="toc-number">4.</span> <span class="toc-text">4、global 对象</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-[JS] 创建、修改、获取属性的方法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-[ES6]ES6基础知识—let和const命令" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Object 创建/修改/获取属性的方法
+      ES6基础知识 — let和const命令
     </h1>
   
 
@@ -269,8 +269,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/09/26/[JS] 创建、修改、获取属性的方法/" class="article-date">
-	  <time datetime="2018-09-26T10:08:12.000Z" itemprop="datePublished">2018-09-26</time>
+	<a href="/2018/10/17/[ES6]ES6基础知识—let和const命令/" class="article-date">
+	  <time datetime="2018-10-17T12:23:12.000Z" itemprop="datePublished">2018-10-17</time>
 	</a>
 </span>
         
@@ -282,41 +282,34 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/JS/">JS</a>
+	<a class="article-tag-link" href="/tags/ES6/">ES6</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/09/26/[JS] 创建、修改、获取属性的方法/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/10/17/[ES6]ES6基础知识—let和const命令/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h3 id="Object-defineProperty-obj-prop-descriptor"><a href="#Object-defineProperty-obj-prop-descriptor" class="headerlink" title="Object.defineProperty(obj, prop, descriptor)"></a>Object.defineProperty(obj, prop, descriptor)</h3><p>会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。<br>若不指定configurable, writable, enumerable ，则这些属性默认值为false；<br>若不指定value, get, set，则这些属性默认值为undefined。</p>
-<ul>
-<li>obj: 需要被操作的目标对象</li>
-<li>prop: 目标对象需要定义或修改的属性的名称</li>
-<li>descriptor: 将被定义或修改的属性的描述符</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'name'</span>, &#123;</span><br><span class="line">    configurable: <span class="literal">false</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="string">'张三'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(obj.name)  <span class="comment">//张三</span></span><br></pre></td></tr></table></figure>
-<h3 id="Object-defineProperties-obj-props"><a href="#Object-defineProperties-obj-props" class="headerlink" title="Object.defineProperties(obj, props)"></a>Object.defineProperties(obj, props)</h3><p>直接在一个对象上定义一个或多个新的属性或修改现有属性，并返回该对象。</p>
-<ul>
-<li>props: 该对象的一个或多个键值对定义了将要为对象添加或修改的属性的具体配置。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">Object</span>.defineProperties(obj, &#123;</span><br><span class="line">    name: &#123;</span><br><span class="line">        value: <span class="string">'张三'</span>,</span><br><span class="line">        configurable: <span class="literal">false</span>,</span><br><span class="line">        writable: <span class="literal">true</span>,</span><br><span class="line">        enumerable: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: &#123;</span><br><span class="line">        value: <span class="number">18</span>,</span><br><span class="line">        configurable: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(obj.name, obj.age) <span class="comment">// 张三, 18</span></span><br></pre></td></tr></table></figure>
-<p>在不支持 Object.defineProperties() 方法的浏览器中不能修改[[configurable]]和[[enumerable]]。</p>
-<h3 id="Object-getOwnPropertyDescriptor-obj-prop"><a href="#Object-getOwnPropertyDescriptor-obj-prop" class="headerlink" title="Object.getOwnPropertyDescriptor(obj, prop)"></a>Object.getOwnPropertyDescriptor(obj, prop)</h3><p>返回指定对象上一个自有属性对应的属性描述符。</p>
-<ul>
-<li>prop: 目标对象内属性名称。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> desc = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">'name'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(desc);</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     configurable: true,</span></span><br><span class="line"><span class="comment">//     enumerable: true,</span></span><br><span class="line"><span class="comment">//     writable: true,</span></span><br><span class="line"><span class="comment">//     value: "张三"</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Object-getOwnPropertyDescriptors-obj-prop"><a href="#Object-getOwnPropertyDescriptors-obj-prop" class="headerlink" title="Object.getOwnPropertyDescriptors(obj, prop)"></a>Object.getOwnPropertyDescriptors(obj, prop)</h3><p>所指定对象的所有自身属性的描述符，如果没有任何自身属性，则返回空对象。<br>返回值是一个对象，若是访问器属性，该对象有Configurable、Enumberable、Get和set；<br>若是数据属性，该对象有Configurable、Enumberable、Writable和Value；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperties(book, &#123;</span><br><span class="line">    _year: &#123;</span><br><span class="line">        value: <span class="number">2004</span></span><br><span class="line">    &#125;,</span><br><span class="line">    edition: &#123;</span><br><span class="line">        value: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    year: &#123;</span><br><span class="line">        get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>._year;</span><br><span class="line">        &#125;,</span><br><span class="line">        set: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(newValue &gt; <span class="number">2004</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>._year = newValue;</span><br><span class="line">                <span class="keyword">this</span>.edition += newValue - <span class="number">2004</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> descriptor =  <span class="built_in">Object</span>.getOwnPropertyDescriptors(book, <span class="string">'_year'</span>);</span><br><span class="line">descriptor.value;               <span class="comment">// 2004</span></span><br><span class="line">descriptor.configurable;        <span class="comment">// false</span></span><br><span class="line"><span class="keyword">typeof</span> descriptor.get;          <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> desc = <span class="built_in">Object</span>.getOwnPropertyDescriptors(book, <span class="string">'year'</span>);</span><br><span class="line">descriptor.value;               <span class="comment">// undefined</span></span><br><span class="line">descriptor.enumberable;         <span class="comment">// false</span></span><br><span class="line"><span class="keyword">typeof</span> descriptor.get;          <span class="comment">// function</span></span><br></pre></td></tr></table></figure>
-<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>在调用 Object.defineProperty() 方法时，如果不指定，configrubale、enumerable和writable 默认都为false。</p>
-<h4 id="configrubale"><a href="#configrubale" class="headerlink" title="configrubale"></a>configrubale</h4><p>设置configrubale属性为false，则不可使用delete操作符(在严格模式下抛出错误), 修改所有内部属性值会抛出错误。</p>
-<h4 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h4><h4 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h4><h4 id="get-和-set"><a href="#get-和-set" class="headerlink" title="get 和 set"></a>get 和 set</h4>
+        <p><a href="#1、let和const的性质">1、let和const的性质</a><br><a href="#2、块级作用域">2、块级作用域</a><br><a href="#3、顶层对象的属性">3、顶层对象的属性</a><br><a href="#4、global 对象">4、global 对象</a></p>
+<h3 id="1、let和const的性质"><a href="#1、let和const的性质" class="headerlink" title="1、let和const的性质"></a>1、let和const的性质</h3><p>1、<code>let</code>、<code>const</code>声明的变量只在声明所在的块级作用域内有效；<strong>const 一旦声明变量，就必须立即初始化，不能留到以后赋值。</strong><br>2、不存在变量提升；<br>3、暂时性死区: 在代码块内，只能在声明的位置后面使用；<br>4、不允许在相同作用域内，重复声明同一个变量；</p>
+<font color="#dd0000">对于简单类型的数据（数值、字符串、布尔值），const等同于常量。</font><br><font color="#dd0000">对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。</font><br><font color="#dd0000">如果将对象冻结，可以使用Object.freeze方法。</font>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、变量声明提升</span></span><br><span class="line"><span class="comment">// var 的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(foo); <span class="comment">// 输出undefined</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="number">2</span>;</span><br><span class="line"><span class="comment">// let 的情况</span></span><br><span class="line"><span class="built_in">console</span>.log(bar); <span class="comment">// 报错ReferenceError</span></span><br><span class="line"><span class="keyword">let</span> bar = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、暂时性死区案例</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="comment">// TDZ开始</span></span><br><span class="line">  tmp = <span class="string">'abc'</span>; <span class="comment">// ReferenceError</span></span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// ReferenceError</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> tmp; <span class="comment">// TDZ结束</span></span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line">  tmp = <span class="number">123</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 123</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、对象冻结</span></span><br><span class="line"><span class="keyword">const</span> foo = <span class="built_in">Object</span>.freeze(&#123;&#125;);</span><br><span class="line"><span class="comment">// 常规模式时，下面一行不起作用；严格模式时，该行会报错</span></span><br><span class="line">foo.prop = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、除了将对象本身冻结，对象的属性也应该冻结。</span></span><br><span class="line"><span class="keyword">var</span> constantize = <span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">  <span class="built_in">Object</span>.keys(obj).forEach( <span class="function">(<span class="params">key, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> ( <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ) &#123;</span><br><span class="line">      constantize( obj[key] );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2、块级作用域"><a href="#2、块级作用域" class="headerlink" title="2、块级作用域"></a>2、块级作用域</h3><p>提出原因：内层变量可能会覆盖外层变量；用来计数的循环变量泄露为全局变量……<br>实现作用：是在块内使用，不影响外面，外面的变量，内部也能定义。</p>
+<font color="#dd0000">ES6 有 6 种声明变量的方法：<code>var</code>、<code>function</code>、<code>let</code>、<code>const</code>、<code>import</code>、<code>class</code></font>
+
+<h3 id="3、顶层对象的属性"><a href="#3、顶层对象的属性" class="headerlink" title="3、顶层对象的属性"></a>3、顶层对象的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.a = 1;</span><br><span class="line">a   // 返回 1</span><br><span class="line">a = 2;</span><br><span class="line">window.a // 返回 2</span><br></pre></td></tr></table></figure>
+<p>上述代码的弊端：<br>1、不能在编译时就报出变量未声明的错误，只有运行时才能知道（因为全局变量可能是顶层对象的属性创造的，而属性的创造是动态的）；<br>2、其次，程序员很容易不知不觉地就创建了全局变量（比如打字出错）；<br>3、顶层对象的属性是到处可以读写的，这非常不利于模块化编程。<br>4、window对象有实体含义，指的是浏览器的窗口对象，顶层对象是一个有实体含义的对象，也是不合适的。</p>
+<p><font color="#dd0000"><code>var</code>命令和<code>function</code>命令声明的全局变量，依旧是顶层对象的属性；</font></p>
+<p><font color="#dd0000"><code>let</code>命令、<code>const</code>命令、<code>class</code>命令声明的全局变量，不属于顶层对象的属性。</font><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 如果在 Node 的 REPL 环境，可以写成 global.a</span></span><br><span class="line"><span class="comment">// 或者采用通用方法，写成 this.a</span></span><br><span class="line"><span class="built_in">window</span>.a <span class="comment">// 返回 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">window</span>.b <span class="comment">// 返回 undefined</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4、global-对象"><a href="#4、global-对象" class="headerlink" title="4、global 对象"></a>4、global 对象</h3><p>目的：为了在不同的环境中都能获取到顶层对象。<br>ES5顶层对象的获取：<br>1、浏览器里面，顶层对象是window，但 Node 和 Web Worker 没有window。<br>2、浏览器和 Web Worker 里面，self也指向顶层对象，但是 Node 没有self。<br>3、Node 里面，顶层对象是global，但其他环境都不支持。</p>
+<p>同一段代码为了能够在各种环境，都能取到顶层对象，现在一般是使用this变量，但是有局限性。<br>1、全局环境中，this会返回顶层对象。但Node 模块和 ES6 模块中，this返回的是当前模块。<br>2、函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。<br>3、不管是严格模式，还是普通模式，new Function(‘return this’)()，总是会返回全局对象。但是，如果浏览器用了 CSP（Content Security Policy，内容安全策略），那么eval、new Function这些方法都可能无法使用。</p>
+<p>提出了<code>垫片库system.global</code>.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CommonJS 的写法</span></span><br><span class="line"><span class="keyword">var</span> global = <span class="built_in">require</span>(<span class="string">'system.global'</span>)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 模块的写法</span></span><br><span class="line"><span class="keyword">import</span> getGlobal <span class="keyword">from</span> <span class="string">'system.global'</span>;</span><br><span class="line"><span class="keyword">const</span> global = getGlobal();</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <!-- <div class="article-footer">
@@ -325,7 +318,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/09/26/[JS] 创建、修改、获取属性的方法/" title="Object 创建/修改/获取属性的方法" target="_blank" rel="external">http://yoursite.com/2018/09/26/[JS] 创建、修改、获取属性的方法/</a>
+      <a href="http://yoursite.com/2018/10/17/[ES6]ES6基础知识—let和const命令/" title="ES6基础知识 — let和const命令" target="_blank" rel="external">http://yoursite.com/2018/10/17/[ES6]ES6基础知识—let和const命令/</a>
     </li>
     
     
@@ -372,12 +365,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/09/28/[构建] webpack入门/" title="webpack 入门"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/10/17/[ES6]ES6基础知识—字符串的扩展/" title="ES6基础知识 — 字符串的扩展"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2018/09/26/[JS] JS高级程序设计/" title="JS高级程序设计"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/10/15/[移动端]移动浏览器的四大内核/" title="移动浏览器的四大内核"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     

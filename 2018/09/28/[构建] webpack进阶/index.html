@@ -18,18 +18,18 @@
   
   
   <title>webpack进阶 | Hexo</title>
-  <meta name="description" content="配置分离在大型项目中，webpack.config.js 会变得越来越臃肿，因此可以利用 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。 code splitting 异步加载">
+  <meta name="description" content="在使用 webpack 构建的典型应用程序或站点中，有三种主要的代码类型：1、团队编写的源码。2、源码会依赖的任何第三方的 library 或 “vendor” 代码。3、webpack 的 runtime 和 manifest，管理所有模块的交互。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。通过使用 manifest">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack进阶">
 <meta property="og:url" content="http://yoursite.com/2018/09/28/[构建] webpack进阶/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="配置分离在大型项目中，webpack.config.js 会变得越来越臃肿，因此可以利用 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。 code splitting 异步加载">
+<meta property="og:description" content="在使用 webpack 构建的典型应用程序或站点中，有三种主要的代码类型：1、团队编写的源码。2、源码会依赖的任何第三方的 library 或 “vendor” 代码。3、webpack 的 runtime 和 manifest，管理所有模块的交互。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。通过使用 manifest">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T02:21:21.000Z">
+<meta property="og:updated_time" content="2018-10-17T15:36:16.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack进阶">
-<meta name="twitter:description" content="配置分离在大型项目中，webpack.config.js 会变得越来越臃肿，因此可以利用 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。 code splitting 异步加载">
+<meta name="twitter:description" content="在使用 webpack 构建的典型应用程序或站点中，有三种主要的代码类型：1、团队编写的源码。2、源码会依赖的任何第三方的 library 或 “vendor” 代码。3、webpack 的 runtime 和 manifest，管理所有模块的交互。runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。通过使用 manifest">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/09/28/[构建] webpack进阶/index.html">
   
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/H5/" style="font-size: 13px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.25px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.5px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 13.75px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.25px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
+      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 13.33px;">ES6</a> <a href="/tags/H5/" style="font-size: 13px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.33px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.67px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.33px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
     </div>
   </div>
 
@@ -232,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -294,7 +294,8 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="配置分离"><a href="#配置分离" class="headerlink" title="配置分离"></a>配置分离</h2><p>在大型项目中，webpack.config.js 会变得越来越臃肿，因此可以利用 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。</p>
+        <p>在使用 webpack 构建的典型应用程序或站点中，有三种主要的代码类型：<br>1、团队编写的源码。<br>2、源码会依赖的任何第三方的 library 或 “vendor” 代码。<br>3、webpack 的 runtime 和 manifest，管理所有模块的交互。<br>runtime 包含：在模块交互时，连接模块所需的加载和解析逻辑。包括浏览器中的已加载模块的连接，以及懒加载模块的执行逻辑。<br>通过使用 manifest 中的数据，runtime 将能够查询模块标识符，检索出背后对应的模块。<br>import 或 require 语句现在都已经转换为 <strong>webpack_require</strong> 方法，此方法指向模块标识符(module identifier)</p>
+<h2 id="配置分离"><a href="#配置分离" class="headerlink" title="配置分离"></a>配置分离</h2><p>在大型项目中，webpack.config.js 会变得越来越臃肿，因此可以利用 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。</p>
 <h2 id="code-splitting-异步加载"><a href="#code-splitting-异步加载" class="headerlink" title="code splitting 异步加载"></a>code splitting 异步加载</h2>
       
     </div>
@@ -351,7 +352,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/09/28/前端工程化/" title="前端工程化"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/09/28/[构建] parceljs & webpack/" title="parceljs &amp; webpack"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     

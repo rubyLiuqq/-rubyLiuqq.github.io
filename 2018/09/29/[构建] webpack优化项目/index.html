@@ -18,18 +18,18 @@
   
   
   <title>webpack 优化项目策略 | Hexo</title>
-  <meta name="description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用">
+  <meta name="description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用imagemin-webpack-plugin: 压缩图片；webpack-spritesmith: 插件制作雪碧图 png: file-loader 可以把 JS 和 CSS 中导入图片的语句替换成正确的地址，并同时把文件输出">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack 优化项目策略">
 <meta property="og:url" content="http://yoursite.com/2018/09/29/[构建] webpack优化项目/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用">
+<meta property="og:description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用imagemin-webpack-plugin: 压缩图片；webpack-spritesmith: 插件制作雪碧图 png: file-loader 可以把 JS 和 CSS 中导入图片的语句替换成正确的地址，并同时把文件输出">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T09:06:20.000Z">
+<meta property="og:updated_time" content="2018-10-17T16:39:58.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 优化项目策略">
-<meta name="twitter:description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用">
+<meta name="twitter:description" content="DllReferencePlugin: 将打包好的dll文件传入构建的代码里面AddAssetHtmlPlugin: 在生成的html文件中加入dll文件的script引用imagemin-webpack-plugin: 压缩图片；webpack-spritesmith: 插件制作雪碧图 png: file-loader 可以把 JS 和 CSS 中导入图片的语句替换成正确的地址，并同时把文件输出">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/09/29/[构建] webpack优化项目/index.html">
   
@@ -203,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/H5/" style="font-size: 13px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.25px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.5px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 13.75px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.25px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
+      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 13.33px;">ES6</a> <a href="/tags/H5/" style="font-size: 13px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.33px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.67px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.33px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
     </div>
   </div>
 
@@ -232,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -294,7 +294,9 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><code>DllReferencePlugin</code>: 将打包好的dll文件传入构建的代码里面<br><code>AddAssetHtmlPlugin</code>: 在生成的html文件中加入dll文件的script引用</p>
+        <p><code>DllReferencePlugin</code>: 将打包好的dll文件传入构建的代码里面<br><code>AddAssetHtmlPlugin</code>: 在生成的html文件中加入dll文件的script引用<br><code>imagemin-webpack-plugin</code>: 压缩图片；<br><code>webpack-spritesmith</code>: 插件制作雪碧图</p>
+<p>png: <code>file-loader</code> 可以把 JS 和 CSS 中导入图片的语句替换成正确的地址，并同时把文件输出到对应的位置。<br><code>url-loader</code> 经 base64 编码后注入到 JS 或者 CSS 中去。<br>svg: <code>raw-loader</code> 可以把文本文件的内容读取出来，注入到 JS 或 CSS 中去。</p>
+<p>动态链接库DLL加速的原因：包含大量复用模块的动态链接库只需要编译一次，在之后的构建过程中被动态链接库包含的模块将不会在重新编译，而是直接使用动态链接库中的代码。<br>动态链接库中大多数包含的是常用的第三方模块，例如 react、react-dom，只要不升级这些模块的版本，动态链接库就不用重新编译。</p>
 
       
     </div>
@@ -356,7 +358,7 @@
     
     
     <li class="next">
-      <a href="/2018/09/28/[构建] parceljs & webpack/" title="parceljs &amp; webpack"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/09/28/前端工程化/" title="前端工程化"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
