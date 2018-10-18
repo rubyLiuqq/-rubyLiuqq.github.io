@@ -18,18 +18,18 @@
   
   
   <title>小细节小技巧 | Hexo</title>
-  <meta name="description" content="&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接到hover上有动画的需求，此时设置overflow-x: hidden; overflow-y: visible;不能实现">
+  <meta name="description" content="1、overflow的奇葩事件2、BFC块级格式化上下文3、font-size4、position:sticky5、清除浮动&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小细节小技巧">
 <meta property="og:url" content="http://yoursite.com/2018/08/08/[CSS] 小细节小技巧/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接到hover上有动画的需求，此时设置overflow-x: hidden; overflow-y: visible;不能实现">
+<meta property="og:description" content="1、overflow的奇葩事件2、BFC块级格式化上下文3、font-size4、position:sticky5、清除浮动&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T02:21:56.000Z">
+<meta property="og:updated_time" content="2018-10-18T14:06:58.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小细节小技巧">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接到hover上有动画的需求，此时设置overflow-x: hidden; overflow-y: visible;不能实现">
+<meta name="twitter:description" content="1、overflow的奇葩事件2、BFC块级格式化上下文3、font-size4、position:sticky5、清除浮动&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/08/08/[CSS] 小细节小技巧/index.html">
   
@@ -247,7 +247,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、overflow的奇葩事件"><span class="toc-number">1.</span> <span class="toc-text">1、overflow的奇葩事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、BFC-块级格式化上下文"><span class="toc-number">2.</span> <span class="toc-text">2、BFC 块级格式化上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、font-size"><span class="toc-number">3.</span> <span class="toc-text">3、font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、position-sticky"><span class="toc-number">4.</span> <span class="toc-text">4、position:sticky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、清除浮动"><span class="toc-number">5.</span> <span class="toc-text">5、清除浮动</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、overflow的奇葩事件"><span class="toc-number">1.</span> <span class="toc-text">1、overflow的奇葩事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、BFC块级格式化上下文"><span class="toc-number">2.</span> <span class="toc-text">2、BFC块级格式化上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、font-size"><span class="toc-number">3.</span> <span class="toc-text">3、font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、position-sticky"><span class="toc-number">4.</span> <span class="toc-text">4、position:sticky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、清除浮动"><span class="toc-number">5.</span> <span class="toc-text">5、清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、css容易不注意的"><span class="toc-number">6.</span> <span class="toc-text">6、css容易不注意的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#块元素和行内元素"><span class="toc-number">6.1.</span> <span class="toc-text">块元素和行内元素</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">~、、、、、</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#undefined"><span class="toc-number">0.0.0.1.</span> <span class="toc-text">、、、、、</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择优先级"><span class="toc-number">0.1.</span> <span class="toc-text">选择优先级</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -294,9 +294,9 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>&emsp;&emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。</p>
+        <p><a href="#1、overflow的奇葩事件">1、overflow的奇葩事件</a><br><a href="#2、BFC块级格式化上下文">2、BFC块级格式化上下文</a><br><a href="#3、font-size">3、font-size</a><br><a href="#4、position:sticky">4、position:sticky</a><br><a href="#5、清除浮动">5、清除浮动</a><br>&emsp;&emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。</p>
 <h3 id="1、overflow的奇葩事件"><a href="#1、overflow的奇葩事件" class="headerlink" title="1、overflow的奇葩事件"></a>1、overflow的奇葩事件</h3><p>&emsp;&emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接到hover上有动画的需求，此时设置overflow-x: hidden; overflow-y: visible;不能实现。没办法，看到网上好多人说增加父级，并对父级分别设置overflow来处理，不靠谱，实现不了。<br>&emsp;&emsp;原因：这块和overflow非visible值会使一个块级元素形成一个BFC（块级格式化上下文）有关。overflow-x和overflow-y的计算值跟给定的值相同，除了某些跟’visible’值的不合理组合：如果一个其中一个属性的值被赋为’visible’，而另一个被赋值为’scroll’或’auto’，那么’visible’会被重置为’auto’。overflow的计算值与overflow-x相等（如果overflow-y相同的话）；否则就是一对overflow-x和overflow-y的计算值。 其实另一个值设置为hidden的时候，visible也会被重置为auto。<br>&emsp;&emsp;处理方法：增加外围父级的高度，用于hover时的阴影用，然后margin点位置，用于hover时的上移。其他依旧正常设置，只是不让动画局限在撑起的高度内。</p>
-<h3 id="2、BFC-块级格式化上下文"><a href="#2、BFC-块级格式化上下文" class="headerlink" title="2、BFC 块级格式化上下文"></a>2、BFC 块级格式化上下文</h3><h3 id="3、font-size"><a href="#3、font-size" class="headerlink" title="3、font-size"></a>3、font-size</h3><p>&emsp;&emsp;很简单的div模型，设置宽高后，同样可以利用font-size来扩大div的宽度，其原因可由 line-height 解释</p>
+<h3 id="2、BFC块级格式化上下文"><a href="#2、BFC块级格式化上下文" class="headerlink" title="2、BFC块级格式化上下文"></a>2、BFC块级格式化上下文</h3><h3 id="3、font-size"><a href="#3、font-size" class="headerlink" title="3、font-size"></a>3、font-size</h3><p>&emsp;&emsp;很简单的div模型，设置宽高后，同样可以利用font-size来扩大div的宽度，其原因可由 line-height 解释</p>
 <h3 id="4、position-sticky"><a href="#4、position-sticky" class="headerlink" title="4、position:sticky"></a>4、position:sticky</h3><p>&emsp;&emsp;sticky原意为黏糊的，但在css中更多的表现为吸顶、吸底(移动端网站的头部返回栏,底部切换栏之类)的效果用这个属性非常适合。<br>导航的效果像是在页面打开时是 relative 的,向下滑动的时候 fixed 并且 top:0 为零。</p>
 <p>position:sticky可以认为是 position:relative 和 position:fixed 两种定位功能于一体的特殊定位。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sticky</span> &#123; </span><br><span class="line">  <span class="attribute">position</span>: sticky; </span><br><span class="line">  <span class="attribute">position</span>: -webkit-sticky; </span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>注意：可以放心在ios上使用，可以使用polyfill进行处理</strong><br><strong>注意坑</strong><br><!-- 注意 --></p>
@@ -310,6 +310,10 @@
 <p>然而，在某些情况下，这可能会带来一些阴影的截断或是非预期的滚动条。同时它也使你的CSS变得不那么直观.</p>
 <p>方法三：<code>display: flow-root</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flow-root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>display: flow-root</code>做的唯一的一件事就是去创建一个BFC，因此可以避免其他创建BFC方法带来的问题。</p>
+<h3 id="6、css容易不注意的"><a href="#6、css容易不注意的" class="headerlink" title="6、css容易不注意的"></a>6、css容易不注意的</h3><h4 id="块元素和行内元素"><a href="#块元素和行内元素" class="headerlink" title="块元素和行内元素"></a>块元素和行内元素</h4><p>块元素：会独自占据一整行或多整行，可以对其设置宽高</p>
+<font color="d00"><h1>~<h6>、<p>、<div>、<ul>、<li>、<ol></ol></li></ul></div></p></h6></h1></font><br>行内元素：靠自身的字体大小和版本尺寸来支撑结构<br><font color="d00"><strong>、<b>、<em>、<i>、<del>、<s>、<ins>、<u>、<a>、<span></span></a></u></ins></s></del></i></em></b></strong></font>
+
+<h4 id="选择优先级"><a href="#选择优先级" class="headerlink" title="选择优先级"></a>选择优先级</h4><p>行内 &gt; id &gt; 类 &gt; 标签 &gt; 通配符选择器 &gt; 继承样式 &gt; 浏览器默认的样式</p>
 
       
     </div>

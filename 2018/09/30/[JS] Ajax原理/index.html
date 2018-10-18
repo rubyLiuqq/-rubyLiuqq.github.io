@@ -18,18 +18,18 @@
   
   
   <title>Ajax 原理 | Hexo</title>
-  <meta name="description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/">
+  <meta name="description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/ Ajax函数的封装123456789101112131415161718192021222324function ajax(url, fnSucc, fnFail">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax 原理">
 <meta property="og:url" content="http://yoursite.com/2018/09/30/[JS] Ajax原理/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/">
+<meta property="og:description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/ Ajax函数的封装123456789101112131415161718192021222324function ajax(url, fnSucc, fnFail">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T02:21:48.000Z">
+<meta property="og:updated_time" content="2018-10-18T14:38:24.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax 原理">
-<meta name="twitter:description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/">
+<meta name="twitter:description" content="http://jartto.wang/2015/09/01/chattered-about-ajax/ http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/ Ajax函数的封装123456789101112131415161718192021222324function ajax(url, fnSucc, fnFail">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/09/30/[JS] Ajax原理/index.html">
   
@@ -296,6 +296,7 @@
       
         <p><a href="http://jartto.wang/2015/09/01/chattered-about-ajax/" target="_blank" rel="noopener">http://jartto.wang/2015/09/01/chattered-about-ajax/</a></p>
 <p><a href="http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/" target="_blank" rel="noopener">http://jartto.wang/2015/10/01/advantage-and-disadvantages-of-Ajax/</a></p>
+<p>Ajax函数的封装<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, fnSucc, fnFailed</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> oAjax;</span><br><span class="line">  <span class="comment">// 1、建立Ajax对象</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHTTPRequest) &#123;</span><br><span class="line">    oAjax = <span class="keyword">new</span> XMLHTTPRequest();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    oAjax = <span class="keyword">new</span> ActiveXObjext(<span class="string">'Micosoft.XMLHTTP'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 2、连接服务器（打开和连接服务器）</span></span><br><span class="line">  oAjax.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);</span><br><span class="line">  <span class="comment">// 3、发送</span></span><br><span class="line">  oAjax.send();</span><br><span class="line">  <span class="comment">// 4、接收</span></span><br><span class="line">  oAjax.onreadyStateChange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (oAjax.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (oAjax.status === <span class="number">200</span>) &#123;</span><br><span class="line">        <span class="comment">// fnSucc</span></span><br><span class="line">        fnSucc(oAjax.requesText);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        fnSucc(oAjax.status);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
