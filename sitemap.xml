@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/10/20/%5B%E6%9E%84%E5%BB%BA%5D%20webpack%E6%B5%81%E7%A8%8B/</loc>
+    
+    <lastmod>2018-10-20T15:40:37.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/08/08/%5BCSS%5D%20%E5%B0%8F%E7%BB%86%E8%8A%82%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    
+    <lastmod>2018-10-20T14:51:55.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/19/%5BVue%5DVue%E5%AE%98%E7%BD%91/</loc>
+    
+    <lastmod>2018-10-20T13:47:13.210Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/09/06/git%20%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2018-10-19T15:30:11.259Z</lastmod>
@@ -23,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/10/19/%5BVue%5DVue%E5%AE%98%E7%BD%91/</loc>
-    
-    <lastmod>2018-10-19T15:18:33.179Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/10/19/%5BVue%5D%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</loc>
     
     <lastmod>2018-10-19T15:18:29.449Z</lastmod>
@@ -47,13 +61,6 @@
     <loc>http://yoursite.com/2018/09/30/%5BJS%5D%20Ajax%E5%8E%9F%E7%90%86/</loc>
     
     <lastmod>2018-10-18T14:38:24.563Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/08/08/%5BCSS%5D%20%E5%B0%8F%E7%BB%86%E8%8A%82%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
-    
-    <lastmod>2018-10-18T14:06:58.990Z</lastmod>
     
   </url>
   
@@ -138,13 +145,6 @@
     <loc>http://yoursite.com/2018/10/11/Project-Display/</loc>
     
     <lastmod>2018-10-11T07:35:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/10/08/about/index/</loc>
-    
-    <lastmod>2018-10-08T02:22:49.000Z</lastmod>
     
   </url>
   
