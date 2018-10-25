@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/09/26/%5BJS%5D%20JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2018-10-25T12:31:35.538Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/10/25/%5BJS%5D%E5%85%B3%E4%BA%8E%E5%89%8D%E7%AB%AF%E5%BC%82%E5%B8%B8%E7%9A%84%E6%8D%95%E8%8E%B7/</loc>
+    
+    <lastmod>2018-10-25T10:16:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/09/28/%5B%E6%9E%84%E5%BB%BA%5D%20webpack%E8%BF%9B%E9%98%B6/</loc>
+    
+    <lastmod>2018-10-23T13:18:01.858Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/09/29/%5BES6%5Dasync%E3%80%81await/</loc>
     
     <lastmod>2018-10-23T13:16:17.088Z</lastmod>
@@ -86,13 +107,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/09/28/%5B%E6%9E%84%E5%BB%BA%5D%20webpack%E8%BF%9B%E9%98%B6/</loc>
-    
-    <lastmod>2018-10-17T16:45:50.885Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/10/17/%5BES6%5DES6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95/</loc>
     
     <lastmod>2018-10-17T15:33:17.791Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>http://yoursite.com/2018/09/30/%5BH5%5D%20Html5%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/</loc>
     
     <lastmod>2018-10-15T03:22:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/09/26/%5BJS%5D%20JS%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2018-10-12T09:20:03.000Z</lastmod>
     
   </url>
   
