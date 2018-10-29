@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>setTimeout、async、promise执行顺序总结 | Hexo</title>
-  <meta name="keywords" content="JS">
+  <title>单页面应用的权限管理 | Hexo</title>
+  <meta name="description" content="Vue 单页面应用的权限管理有两种方法：接口级权限；页面级权限 接口级权限例子：后台好多接口发ajax请求获取数据的时候后端都会需要获取用户是否登录，并在登录的情况反馈到前端，前端跳转到登录页面。这个就可以使用这个拦截器来实现。在请求或响应被 then 或 catch 处理前拦截它们。12345678// 添加响应拦截器axios.interceptors.response.use(respons">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="setTimeout、async、promise执行顺序总结">
-<meta property="og:url" content="http://yoursite.com/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/index.html">
+<meta property="og:title" content="单页面应用的权限管理">
+<meta property="og:url" content="http://yoursite.com/2018/10/19/[Vue] 单页面应用的权限管理/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue 单页面应用的权限管理有两种方法：接口级权限；页面级权限 接口级权限例子：后台好多接口发ajax请求获取数据的时候后端都会需要获取用户是否登录，并在登录的情况反馈到前端，前端跳转到登录页面。这个就可以使用这个拦截器来实现。在请求或响应被 then 或 catch 处理前拦截它们。12345678// 添加响应拦截器axios.interceptors.response.use(respons">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T13:15:36.587Z">
+<meta property="og:updated_time" content="2018-10-29T13:04:42.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="setTimeout、async、promise执行顺序总结">
+<meta name="twitter:title" content="单页面应用的权限管理">
+<meta name="twitter:description" content="Vue 单页面应用的权限管理有两种方法：接口级权限；页面级权限 接口级权限例子：后台好多接口发ajax请求获取数据的时候后端都会需要获取用户是否登录，并在登录的情况反馈到前端，前端跳转到登录页面。这个就可以使用这个拦截器来实现。在请求或响应被 then 或 catch 处理前拦截它们。12345678// 添加响应拦截器axios.interceptors.response.use(respons">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/10/19/[Vue] 单页面应用的权限管理/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -200,7 +203,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -210,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -229,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -244,21 +247,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口级权限"><span class="toc-number">1.</span> <span class="toc-text">接口级权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面级权限"><span class="toc-number">2.</span> <span class="toc-text">页面级权限</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-[JS]setTimeout、async、promise执行顺序总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-[Vue] 单页面应用的权限管理" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      setTimeout、async、promise执行顺序总结
+      单页面应用的权限管理
     </h1>
   
 
@@ -266,8 +269,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/" class="article-date">
-	  <time datetime="2018-10-23T13:15:43.000Z" itemprop="datePublished">2018-10-23</time>
+	<a href="/2018/10/19/[Vue] 单页面应用的权限管理/" class="article-date">
+	  <time datetime="2018-10-19T02:26:43.000Z" itemprop="datePublished">2018-10-19</time>
 	</a>
 </span>
         
@@ -279,19 +282,24 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/JS/">JS</a>
+	<a class="article-tag-link" href="/tags/Vue/">Vue</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/10/19/[Vue] 单页面应用的权限管理/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <p>Vue 单页面应用的权限管理有两种方法：<code>接口级权限</code>；<code>页面级权限</code></p>
+<h3 id="接口级权限"><a href="#接口级权限" class="headerlink" title="接口级权限"></a>接口级权限</h3><p>例子：后台好多接口发ajax请求获取数据的时候后端都会需要获取用户是否登录，并在登录的情况反馈到前端，前端跳转到登录页面。这个就可以使用这个拦截器来实现。<br>在请求或响应被 then 或 catch 处理前拦截它们。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加响应拦截器</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 对响应数据做点什么</span></span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="comment">// 对响应错误做点什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加请求拦截器</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="params">config</span>  =&gt;</span>&#123;</span><br><span class="line">  <span class="comment">// 在发送请求之前做些什么</span></span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="comment">// 对请求错误做些什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="页面级权限"><a href="#页面级权限" class="headerlink" title="页面级权限"></a>页面级权限</h3><p>页面及权限主要靠vue-router来实现。基本思路是为全局注册一个“前置守卫”钩子函数router.beforeEach。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123; ... &#125;)</span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 这里检查权限并进行跳转</span></span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>每个守卫方法接收三个参数：<br>1、<code>to</code>:Route 即将要进入的目标<br>2、<code>from</code>: Route 当前导航正要离开的路由<br>3、<code>next</code>: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。<br><code>next()</code>: 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed （确认的）。<br><code>next(false)</code>: 中断当前的导航。如果浏览器的 URL 改变了（可能是用户手动或者浏览器后退按钮），那么 URL 地址会重置到 from 路由对应的地址。<br><code>next(&#39;/&#39;)</code>或者 <code>next({ path: &#39;/&#39; })</code>: 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。<br>你可以向 next 传递任意位置对象，且允许设置诸如 replace: true、name: ‘home’ 之类的选项以及任何用在 router-link 的 to prop 或 router.push 中的选项。<br><code>next(error)</code>: (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。</p>
+
       
     </div>
     <!-- <div class="article-footer">
@@ -300,7 +308,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/" title="setTimeout、async、promise执行顺序总结" target="_blank" rel="external">http://yoursite.com/2018/10/23/[JS]setTimeout、async、promise执行顺序总结/</a>
+      <a href="http://yoursite.com/2018/10/19/[Vue] 单页面应用的权限管理/" title="单页面应用的权限管理" target="_blank" rel="external">http://yoursite.com/2018/10/19/[Vue] 单页面应用的权限管理/</a>
     </li>
     
     
@@ -347,12 +355,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/10/25/[JS]关于前端异常的捕获/" title="关于前端异常的捕获"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/10/19/[Vue] Vue官网/" title="vue官网阅读"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2018/10/20/[构建] webpack流程/" title="webpack流程"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/10/18/[Vue] Vue数据传递/" title="vue数据传递"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
