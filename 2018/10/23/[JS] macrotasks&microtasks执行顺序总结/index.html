@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Html5知识积累 | Hexo</title>
-  <meta name="description" content="sessionStorage 和 localStorageWeb Storage包括了两种存储方式：sessionStorage和localStorage。sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了。  因此sessionStorage不">
-<meta name="keywords" content="H5">
+  <title>macrotasks&amp;microtasks执行顺序总结 | Hexo</title>
+  <meta name="description" content="macrotasks：setTimeout，setInterval， setImmediate，requestAnimationFrame, I/O，UI渲染microtasks:Promise， process.nextTick， Object.observe， MutationObserver再简单点可以总结为：  在 macrotask 队列中执行最早的那个 task ，然后移出 再执行 m">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Html5知识积累">
-<meta property="og:url" content="http://yoursite.com/2018/09/30/[H5] Html5知识积累/index.html">
+<meta property="og:title" content="macrotasks&amp;microtasks执行顺序总结">
+<meta property="og:url" content="http://yoursite.com/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="sessionStorage 和 localStorageWeb Storage包括了两种存储方式：sessionStorage和localStorage。sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了。  因此sessionStorage不">
+<meta property="og:description" content="macrotasks：setTimeout，setInterval， setImmediate，requestAnimationFrame, I/O，UI渲染microtasks:Promise， process.nextTick， Object.observe， MutationObserver再简单点可以总结为：  在 macrotask 队列中执行最早的那个 task ，然后移出 再执行 m">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T03:22:44.000Z">
+<meta property="og:updated_time" content="2018-10-30T15:49:20.349Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Html5知识积累">
-<meta name="twitter:description" content="sessionStorage 和 localStorageWeb Storage包括了两种存储方式：sessionStorage和localStorage。sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了。  因此sessionStorage不">
+<meta name="twitter:title" content="macrotasks&amp;microtasks执行顺序总结">
+<meta name="twitter:description" content="macrotasks：setTimeout，setInterval， setImmediate，requestAnimationFrame, I/O，UI渲染microtasks:Promise， process.nextTick， Object.observe， MutationObserver再简单点可以总结为：  在 macrotask 队列中执行最早的那个 task ，然后移出 再执行 m">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2018/09/30/[H5] Html5知识积累/index.html">
+  <link rel="canonical" href="http://yoursite.com/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -247,21 +247,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage-和-localStorage"><span class="toc-number">1.</span> <span class="toc-text">sessionStorage 和 localStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web-storage-的离线存储"><span class="toc-number">2.</span> <span class="toc-text">web storage 的离线存储</span></a></li></ol>
+      
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-[H5] Html5知识积累" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-[JS] macrotasks&amp;microtasks执行顺序总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Html5知识积累
+      macrotasks&amp;microtasks执行顺序总结
     </h1>
   
 
@@ -269,8 +269,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/09/30/[H5] Html5知识积累/" class="article-date">
-	  <time datetime="2018-09-30T06:59:31.000Z" itemprop="datePublished">2018-09-30</time>
+	<a href="/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/" class="article-date">
+	  <time datetime="2018-10-23T13:15:43.000Z" itemprop="datePublished">2018-10-23</time>
 	</a>
 </span>
         
@@ -282,34 +282,33 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/H5/">H5</a>
+	<a class="article-tag-link" href="/tags/JS/">JS</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/09/30/[H5] Html5知识积累/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="sessionStorage-和-localStorage"><a href="#sessionStorage-和-localStorage" class="headerlink" title="sessionStorage 和 localStorage"></a>sessionStorage 和 localStorage</h2><p><code>Web Storage</code>包括了两种存储方式：<code>sessionStorage</code>和<code>localStorage</code>。<br><code>sessionStorage</code>用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了。<br>  因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。<br>  页面及标签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。<br><code>localStorage</code>用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
-<p><code>web storage</code>和<code>cookie</code>的区别：<br>Web Storage是为了更大容量存储而设计。<br>Cookie的大小是受限的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，另外cookie还需要指定作用域，不可以跨域调用。</p>
-<p>Web Storage拥有<code>setItem</code>,<code>getItem</code>,<code>removeItem</code>,<code>clear</code>等方法，不像cookie需要开发者自己封装<code>setCookie</code>,<code>getCookie</code>。</p>
-<p>Cookie优点：Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生。</p>
-<p>html5 web storage的浏览器支持情况:<br>浏览器的支持除了IE７及以下不支持外，其他标准浏览器都完全支持。通过简单的代码封装可以统一到所有的浏览器都支持web storage。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.localStorage)&#123; </span><br><span class="line">  <span class="comment">// 浏览支持localStorage</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">// 浏览暂不支持localStorage</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者 </span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span>.localStorage == <span class="string">'undefined'</span>)&#123;</span><br><span class="line">  <span class="comment">// 浏览暂不支持localStorage</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>setItem</code>存储value 用途，.setItem(key, value)<br><code>getItem</code>获取value 用途，.getItem(key)<br><code>removeItem</code>删除key 用途，.removeItem(key)<br><code>clear</code>清除所有的key/value 用途， .clear()<br><code>localStorage</code>和<code>sessionStorage</code>的key和length属性实现遍历: <code>sessionStorage</code>和<code>localStorage</code>提供的key()和length可以方便的实现存储的数据遍历.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setItem(<span class="string">"key"</span>, <span class="string">"value"</span>);     </span><br><span class="line">localStorage.setItem(<span class="string">"site"</span>, <span class="string">"js8.in"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value = sessionStorage.getItem(<span class="string">"key"</span>);     </span><br><span class="line"><span class="keyword">var</span> site = localStorage.getItem(<span class="string">"site"</span>);</span><br><span class="line"></span><br><span class="line">sessionStorage.removeItem(<span class="string">"key"</span>);     </span><br><span class="line">localStorage.removeItem(<span class="string">"site"</span>);</span><br><span class="line"></span><br><span class="line">sessionStorage.clear();     </span><br><span class="line">localStorage.clear();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> storage = <span class="built_in">window</span>.localStorage; </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>, len = storage.length; i &lt; len; i++)&#123;</span><br><span class="line">  <span class="keyword">var</span> key = storage.key(i); </span><br><span class="line">  <span class="keyword">var</span> value = storage.getItem(key); </span><br><span class="line">  <span class="built_in">console</span>.log(key + <span class="string">"="</span> + value); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="web-storage-的离线存储"><a href="#web-storage-的离线存储" class="headerlink" title="web storage 的离线存储"></a>web storage 的离线存储</h2><p>H5 的 Web storage API 采用了离线缓存，会生成一个清单文件（manifest file)，这个清单文件实质就是一系列的URL列表文件，这些URL分别指向页面当中的html,css,javascript,图片等相关内容。<br>当使用离线应用时，应用会引入这一清单文件，浏览器会读取这一文件，下载相应的文件，并将其缓存到本地。<br>使得这些web应用能够脱离网络使用，而用户在离线时的更改也同样会映射到清单文件中，并在重新连线之后将更改返回应用，工作方式与我们现在所使用的网盘有着异曲同工之处。<br>首先，需要在页面头加入manifest属性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span> = <span class="string">"cache.manifest"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后cache.manifest文件的书写方式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">#v0.11</span><br><span class="line">CACHE:</span><br><span class="line">js/app.js</span><br><span class="line">css/style.css</span><br><span class="line">NETWORK:</span><br><span class="line">resourse/logo.png</span><br><span class="line">FALLBACK:</span><br><span class="line">/ /offline.html</span><br></pre></td></tr></table></figure></p>
-<p>离线存储的manifest一般由三个部分组成:</p>
+        <p>macrotasks：<br><code>setTimeout</code>，<code>setInterval</code>， <code>setImmediate</code>，<code>requestAnimationFrame</code>, <code>I/O</code>，<code>UI渲染</code><br>microtasks:<br><code>Promise</code>， <code>process.nextTick</code>， <code>Object.observe</code>， <code>MutationObserver</code><br>再简单点可以总结为：</p>
 <ol>
-<li>CACHE:表示需要离线存储的资源列表，由于包含manifest文件的页面将被自动离线存储，所以不需要把页面自身也列出来。</li>
-<li>NETWORK:表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在CACHE和NETWORK中有一个相同的资源，那么这个资源还是会被离线存储，也就是说CACHE的优先级更高。</li>
-<li>FALLBACK:表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问offline.html。</li>
+<li>在 macrotask 队列中执行最早的那个 task ，然后移出</li>
+<li>再执行 microtask 队列中所有可用的任务，然后移出</li>
+<li>下一个循环，执行下一个 macrotask 中的任务 (再跳到第2步)</li>
 </ol>
-<p><a href="http://jartto.wang/2016/07/25/make-an-inventory-of-html5-api/" target="_blank" rel="noopener">http://jartto.wang/2016/07/25/make-an-inventory-of-html5-api/</a></p>
+<p>任务队列的总结<br>1、一个事件循环有一个或者多个任务队列；<br>2、每个事件循环都有一个microtask队列；<br>3、macrotask队列就是我们常说的任务队列，microtask队列不是任务队列；<br>4、一个任务可以被放入到macrotask队列，也可以放入microtask队列；<br>5、当一个任务被放入microtask或者macrotask队列后，准备工作就已经结束，这时候可以开始执行任务了。</p>
+<p>microtasks 的作用是用来调度应在当前执行的脚本执行结束后立即执行的任务。例如响应事件、或者异步操作，以避免付出额外的一个task的费用。<br>microtask会在两种情况下执行：<br>任务队列(macrotask = task queue)回调后执行，前提条件是当前没有其他执行中的代码。每个task末尾执行。<br>另外在处理microtask期间，如果有新添加的microtasks，也会被添加到队列的末尾并执行。</p>
+<p>也就是说执行顺序是：<br>开始 -&gt; 取task queue第一个task执行 -&gt; 取microtask全部任务依次执行 -&gt; 取task queue下一个任务执行 -&gt; 再次取出microtask全部任务执行 -&gt; … 这样循环往复<br>Promise一旦状态置为完成态，便为其回调(.then内的函数)安排一个microtask。<br>Promise是一个立即执行函数，但是其是否成功（或失败：reject）的回调函数resolve却是一个异步执行的回调。<br>当执行到resolve()时，这个任务会被放入到回调队列中，等待调用栈有空闲时事件循环再来取走它。</p>
+<p>HTML5中规定setTimeout的最小时间延迟是4ms，也就是说理想环境下异步回调最快也是4ms才能触发。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">100000</span> ; i&gt;<span class="number">0</span> ; i-- )&#123;</span><br><span class="line">        i==<span class="number">1</span> &amp;&amp; resolve()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 3 5 4 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 当运行到setTimeout时，会把setTimeout的回调函数console.log(1)放到任务队列里去，然后继续向下执行。</span></span><br><span class="line"><span class="comment">// 2. 接下来会遇到一个Promise。首先执行打印console.log(2)，然后执行for循环，即时for循环要累加到10万，也是在执行栈里面，等待for循环执行完毕以后，将Promise的状态从fulfilled切换到resolve，随后把要执行的回调函数，也就是then里面的console.log(4)推到microtask里面去。接下来马上执行马上console.log(3)。</span></span><br><span class="line"><span class="comment">// 3. 然后出Promise，还剩一个同步的console.log(5)，直接打印。这样第一轮下来，已经依次打印了2，3，5。</span></span><br><span class="line"><span class="comment">// 4. 现在第一轮任务队列已经执行完毕，没有正在执行的代码。符合上面讲的microtask执行条件，因此会将microtask中的任务优先执行，因此执行console.log(4);</span></span><br><span class="line"><span class="comment">// 5. 最后还剩macrotask里的setTimeout放入的函数console.log(1)最后执行。</span></span><br></pre></td></tr></table></figure>
+<font color="#d00"><br>当一个程序有：<code>setTimeout</code>， <code>setInterval</code>，<code>setImmediate</code>， <code>I/O</code>， <code>UI渲染</code>，<code>Promise</code>，<code>process.nextTick</code>， <code>Object.observe</code>， <code>MutationObserver</code>的时候：<br>1. 先执行 macrotasks：I/O –&gt; UI渲染<br>2. 再执行 microtasks ：process.nextTick –&gt; Promise –&gt; MutationObserver –&gt; Object.observe<br>3. 再把setTimeout setInterval setImmediate 塞入一个新的macrotasks，依次：<br>setImmediate –&gt; setTimeout ，setInterval<br><br>综上，nextTick的目的就是产生一个回调函数加入task或者microtask中，当前栈执行完以后（可能中间还有别的排在前面的函数）调用该回调函数，起到了异步触发（即下一个tick时触发）的目的。<br></font>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;,<span class="number">0</span>);</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">    resolve();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">6</span>);</span><br><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">7</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">8</span>);</span><br><span class="line"><span class="comment">// 结果是：3 4 6 8 7 5 1 2</span></span><br></pre></td></tr></table></figure>
+<p>还有acync和await</p>
 
       
     </div>
@@ -319,7 +318,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2018/09/30/[H5] Html5知识积累/" title="Html5知识积累" target="_blank" rel="external">http://yoursite.com/2018/09/30/[H5] Html5知识积累/</a>
+      <a href="http://yoursite.com/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/" title="macrotasks&amp;microtasks执行顺序总结" target="_blank" rel="external">http://yoursite.com/2018/10/23/[JS] macrotasks&microtasks执行顺序总结/</a>
     </li>
     
     
@@ -366,12 +365,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2018/09/30/[JS] Ajax原理/" title="Ajax 原理"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2018/10/25/[JS] 关于前端异常的捕获/" title="关于前端异常的捕获"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2018/09/29/[JS] 正则表达式/" title="正则表达式"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2018/10/20/[构建] webpack流程/" title="webpack流程"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
