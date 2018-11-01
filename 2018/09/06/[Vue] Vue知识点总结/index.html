@@ -18,18 +18,18 @@
   
   
   <title>Vue知识点总结 | Hexo</title>
-  <meta name="description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理：Object.defineProperty())3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作">
+  <meta name="description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作。vue里面有一个watcher，用于观察数据的变">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue知识点总结">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/[Vue] Vue知识点总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理：Object.defineProperty())3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作">
+<meta property="og:description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作。vue里面有一个watcher，用于观察数据的变">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-01T16:18:59.041Z">
+<meta property="og:updated_time" content="2018-11-01T16:20:28.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue知识点总结">
-<meta name="twitter:description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理：Object.defineProperty())3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作">
+<meta name="twitter:description" content="1、nextTick使用原因2、Vue实现数据双向绑定的原理3、Vue中v-for为啥必须含有key4、mutation-type的作用5、自定义指令6、Vue中data为function原因7、dispatch和commit的区别 1、Vue nextTick使用原因nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作。vue里面有一个watcher，用于观察数据的变">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2018/09/06/[Vue] Vue知识点总结/index.html">
   
@@ -296,7 +296,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><a href="#1、nextTick使用原因">1、nextTick使用原因</a><br><a href="#2、Vue实现数据双向绑定的原理：Object.defineProperty(">2、Vue实现数据双向绑定的原理：Object.defineProperty()</a>)<br><a href="#3、Vue中v-for为啥必须含有key">3、Vue中v-for为啥必须含有key</a><br><a href="#4、mutation-type的作用">4、mutation-type的作用</a><br><a href="#5、自定义指令">5、自定义指令</a><br><a href="#6、Vue中data为function原因">6、Vue中data为function原因</a><br><a href="#7、dispatch和commit的区别">7、dispatch和commit的区别</a></p>
+        <p><a href="#1、nextTick使用原因">1、nextTick使用原因</a><br><a href="#2、Vue实现数据双向绑定的原理">2、Vue实现数据双向绑定的原理</a><br><a href="#3、Vue中v-for为啥必须含有key">3、Vue中v-for为啥必须含有key</a><br><a href="#4、mutation-type的作用">4、mutation-type的作用</a><br><a href="#5、自定义指令">5、自定义指令</a><br><a href="#6、Vue中data为function原因">6、Vue中data为function原因</a><br><a href="#7、dispatch和commit的区别">7、dispatch和commit的区别</a></p>
 <h3 id="1、Vue-nextTick使用原因"><a href="#1、Vue-nextTick使用原因" class="headerlink" title="1、Vue nextTick使用原因"></a>1、Vue nextTick使用原因</h3><p>nextTick是全局vue的一个函数，在vue系统中，用于处理dom更新的操作。vue里面有一个watcher，用于观察数据的变化，然后更新dom，vue里面并不是每次数据改变都会触发更新dom，而是将这些操作都缓存在一个队列，在一个事件循环结束之后，刷新队列，统一执行dom更新操作。<br>在vue生命周期的created()钩子函数进行的DOM操作要放在Vue.nextTick()的回调函数中，因为created()钩子函数执行的时候DOM并未进行任何渲染，而此时进行DOM操作是徒劳的，所以此处一定要将DOM操作的JS代码放进Vue.nextTick()的回调函数中。<br>而与之对应的mounted钩子函数，该钩子函数执行时所有的DOM挂载和渲染都已完成，此时该钩子函数进行任何DOM操作都不会有个问题。<br><code>Vue.nextTick(callback)</code>，当数据发生变化，更新后执行回调。<br><code>Vue.$nextTick(callback)</code>，当dom发生变化，更新后执行的回调。</p>
 <p><strong>使用了nextTick异步更新视图的好处</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123; test &#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    data () &#123;</span></span><br><span class="line"><span class="regexp">        return &#123;</span></span><br><span class="line"><span class="regexp">            test: 0</span></span><br><span class="line"><span class="regexp">        &#125;;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    created () &#123;</span></span><br><span class="line"><span class="regexp">      for(let i = 0; i &lt; 1000; i++) &#123;</span></span><br><span class="line"><span class="regexp">        this.test++;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>现在有这样的一种情况，created的时候test的值会被++循环执行1000次。<br>每次++时，都会根据响应式触发setter-&gt;Dep-&gt;Watcher-&gt;update-&gt;patch。<br>如果这时候没有异步更新视图，那么每次++都会直接操作DOM更新视图，这是非常消耗性能的。<br>所以Vue.js实现了一个queue队列，在下一个tick的时候会统一执行queue中Watcher的run。同时，拥有相同id的Watcher不会被重复加入到该queue中去，所以不会执行1000次Watcher的run。最终更新视图只会直接将test对应的DOM的0变成1000。<br>保证更新视图操作DOM的动作是在当前栈执行完以后下一个tick的时候调用，大大优化了性能。</p>
