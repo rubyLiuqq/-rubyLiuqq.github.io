@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1、overflow的奇葩事件2、BFC块级格式化上下文3、font-size4、position:sticky5、清除浮动&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-20T14:51:55.875Z">
+<meta property="og:updated_time" content="2018-10-31T16:38:24.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小细节小技巧">
 <meta name="twitter:description" content="1、overflow的奇葩事件2、BFC块级格式化上下文3、font-size4、position:sticky5、清除浮动&amp;emsp;&amp;emsp;这篇文章专门用于记录在开发过程中遇到的奇葩现象，平时经常更新，用于自己的一个记录。 1、overflow的奇葩事件&amp;emsp;&amp;emsp;背景：这次遇到一个很奇怪的样子，其实应用的场景很简单，就是一个轮播，采用hidden处理周边的待滚动的li，但又接">
@@ -247,7 +247,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、overflow的奇葩事件"><span class="toc-number">1.</span> <span class="toc-text">1、overflow的奇葩事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、BFC块级格式化上下文"><span class="toc-number">2.</span> <span class="toc-text">2、BFC块级格式化上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、font-size"><span class="toc-number">3.</span> <span class="toc-text">3、font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、position-sticky"><span class="toc-number">4.</span> <span class="toc-text">4、position:sticky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、清除浮动"><span class="toc-number">5.</span> <span class="toc-text">5、清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、css容易不注意的"><span class="toc-number">6.</span> <span class="toc-text">6、css容易不注意的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#块元素和行内元素"><span class="toc-number">6.1.</span> <span class="toc-text">块元素和行内元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择优先级"><span class="toc-number">6.2.</span> <span class="toc-text">选择优先级</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、overflow的奇葩事件"><span class="toc-number">1.</span> <span class="toc-text">1、overflow的奇葩事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、BFC块级格式化上下文"><span class="toc-number">2.</span> <span class="toc-text">2、BFC块级格式化上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、font-size"><span class="toc-number">3.</span> <span class="toc-text">3、font-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、position-sticky"><span class="toc-number">4.</span> <span class="toc-text">4、position:sticky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、清除浮动"><span class="toc-number">5.</span> <span class="toc-text">5、清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、css容易不注意的"><span class="toc-number">6.</span> <span class="toc-text">6、css容易不注意的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#块元素和行内元素"><span class="toc-number">6.1.</span> <span class="toc-text">块元素和行内元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#选择优先级"><span class="toc-number">6.2.</span> <span class="toc-text">选择优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、link与-import的区别"><span class="toc-number">7.</span> <span class="toc-text">7、link与@import的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、CSS有哪些继承属性"><span class="toc-number">8.</span> <span class="toc-text">8、CSS有哪些继承属性</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -314,6 +314,14 @@
 <font color="d00"><code>&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;li&gt;、&lt;ol&gt;</code></font><br>行内元素：靠自身的字体大小和版本尺寸来支撑结构<br><font color="d00"><code>&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;、&lt;ins&gt;、&lt;u&gt;、&lt;a&gt;、&lt;span&gt;</code></font>
 
 <h4 id="选择优先级"><a href="#选择优先级" class="headerlink" title="选择优先级"></a>选择优先级</h4><p>行内 &gt; id &gt; 类 &gt; 标签 &gt; 通配符选择器 &gt; 继承样式 &gt; 浏览器默认的样式</p>
+<h3 id="7、link与-import的区别"><a href="#7、link与-import的区别" class="headerlink" title="7、link与@import的区别"></a>7、link与@import的区别</h3><p>1、link是HTML方式， @import是CSS方式<br>2、link最大限度支持并行下载，@import过多嵌套导致串行下载，出现FOUC<br>3、link可以通过rel=”alternate stylesheet”指定候选样式<br>4、浏览器对link支持早于@import，可以使用@import对老浏览器隐藏样式<br>5、@import必须在样式规则之前，可以在css文件中引用其他文件<br>6、总体来说：link优于@import</p>
+<h3 id="8、CSS有哪些继承属性"><a href="#8、CSS有哪些继承属性" class="headerlink" title="8、CSS有哪些继承属性"></a>8、CSS有哪些继承属性</h3><ul>
+<li>关于文字排版的属性如：<code>font</code>、<code>word-break</code>、<code>letter-spacing</code>、<code>text-align</code>、<code>text-rendering</code>、<code>word-spacing</code>、<code>white-space</code>、<code>text-indent</code>、<code>text-transform</code>、<code>text-shadow</code></li>
+<li><code>line-height</code></li>
+<li><code>color</code></li>
+<li><code>visibility</code></li>
+<li><code>cursor</code></li>
+</ul>
 
       
     </div>
