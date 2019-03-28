@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Threejs 基础知识 | Hexo</title>
+  <meta name="description" content="最小绘图环境包含了三个要素：1、场景 scene – 包含所有需要显示的3D物体以及其他相关元素的容器2、摄像机 camera – 决定3D场景如何投影到2D画布之上3、渲染器 renderer – 用于最后绘制的画笔1234567891011import &amp;#123; Scene, PerspectiveCamera, WebGLRenderer &amp;#125; from &apos;three&apos;;var">
+<meta name="keywords" content="ThreeJs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Threejs 基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/[Threejs]Threejs基础知识/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最小绘图环境包含了三个要素：1、场景 scene – 包含所有需要显示的3D物体以及其他相关元素的容器2、摄像机 camera – 决定3D场景如何投影到2D画布之上3、渲染器 renderer – 用于最后绘制的画笔1234567891011import &amp;#123; Scene, PerspectiveCamera, WebGLRenderer &amp;#125; from &apos;three&apos;;var">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-27T06:55:14.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Threejs 基础知识">
+<meta name="twitter:description" content="最小绘图环境包含了三个要素：1、场景 scene – 包含所有需要显示的3D物体以及其他相关元素的容器2、摄像机 camera – 决定3D场景如何投影到2D画布之上3、渲染器 renderer – 用于最后绘制的画笔1234567891011import &amp;#123; Scene, PerspectiveCamera, WebGLRenderer &amp;#125; from &apos;three&apos;;var">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/[Threejs]Threejs基础知识/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/rubyliuqq" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Rubyliuqq</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Front-end Development Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Hangzhou China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/rubyliuqq" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/H5游戏/">H5游戏</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS设计模式/">JS设计模式</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">32</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FabricJS/">FabricJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS设计模式/">JS设计模式</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MattarJS/">MattarJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ThreeJs/">ThreeJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 13.6px;">ES6</a> <a href="/tags/FabricJS/" style="font-size: 13.2px;">FabricJS</a> <a href="/tags/H5/" style="font-size: 13.2px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/JS设计模式/" style="font-size: 13.6px;">JS设计模式</a> <a href="/tags/MattarJS/" style="font-size: 13px;">MattarJS</a> <a href="/tags/ThreeJs/" style="font-size: 13px;">ThreeJs</a> <a href="/tags/Vue/" style="font-size: 13.4px;">Vue</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.2px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.2px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 13.8px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.2px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最小绘图环境"><span class="toc-number">1.</span> <span class="toc-text">最小绘图环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#补充说明"><span class="toc-number">1.0.1.</span> <span class="toc-text">补充说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#形状"><span class="toc-number">2.</span> <span class="toc-text">形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#材质"><span class="toc-number">3.</span> <span class="toc-text">材质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#纹理贴图"><span class="toc-number">4.</span> <span class="toc-text">纹理贴图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D动画"><span class="toc-number">5.</span> <span class="toc-text">3D动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#灯光"><span class="toc-number">6.</span> <span class="toc-text">灯光</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-[Threejs]Threejs基础知识" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Threejs 基础知识
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/02/27/[Threejs]Threejs基础知识/" class="article-date">
+	  <time datetime="2019-02-27T08:50:29.000Z" itemprop="datePublished">2019-02-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/H5游戏/">H5游戏</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/ThreeJs/">ThreeJs</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/02/27/[Threejs]Threejs基础知识/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="最小绘图环境"><a href="#最小绘图环境" class="headerlink" title="最小绘图环境"></a>最小绘图环境</h2><p>包含了三个要素：<br>1、<code>场景 scene</code> – 包含所有需要显示的3D物体以及其他相关元素的容器<br>2、<code>摄像机 camera</code> – 决定3D场景如何投影到2D画布之上<br>3、<code>渲染器 renderer</code> – 用于最后绘制的画笔<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Scene, PerspectiveCamera, WebGLRenderer &#125; <span class="keyword">from</span> <span class="string">'three'</span>;</span><br><span class="line"><span class="keyword">var</span> scene = <span class="keyword">new</span> Scene(); <span class="comment">// 创建场景</span></span><br><span class="line"><span class="keyword">var</span> camera = <span class="keyword">new</span> PerspectiveCamera(<span class="number">45</span>, <span class="built_in">window</span>.innerWidth / <span class="built_in">window</span>.innerHeight, <span class="number">1</span>, <span class="number">1000</span>); <span class="comment">// 创建摄影机</span></span><br><span class="line">camera.position.z = <span class="number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> renderer = <span class="keyword">new</span> WebGLRenderer(); <span class="comment">// 创建渲染器</span></span><br><span class="line">renderer.setSize(<span class="built_in">window</span>.innerWidth, <span class="built_in">window</span>.innerHeight); <span class="comment">// 设置画布大小</span></span><br><span class="line">renderer.setPixelRatio(<span class="built_in">window</span>.devicePixelRatio); <span class="comment">// 设置像素比，针对高清屏</span></span><br><span class="line">renderer.setClearColor(<span class="number">0x000000</span>, <span class="number">1</span>); <span class="comment">// 设置默认背景色</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(renderer.domElement); <span class="comment">// 把画笔插入到dom中</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h4><p>1、照相机：投影方式为：正交投影、透视投影<br>  正交投影：正交投影照相机获得的结果对于在三维空间内平行的线，投影到二维空间中也一定是平行的<br>  透视投影：透视投影照相机获得的结果是类似人眼在真实世界中看到的有“近大远小”的效果<br>2、<code>PerspectiveCamera 透视投影照相机</code>(视野角度FOV, 长宽比aspect ratio, 远剪切面, 近剪切面)<br>3、渲染器：将渲染器宽高设置为浏览器窗口宽高，对于性能比较敏感的应用程序，可以给setSize传入一个较小的值。<br>  优化：若希望保持应用程序的尺寸，但是以较低的分辨率来渲染，可以在调用setSize时，给updateStyle（第三个参数）传入false。eg: setSize(window.innerWidth/2, window.innerHeight/2, false)</p>
+<p>4、场景——雾<br>  <code>Fog 线性雾，雾的密度是随着距离线性增大的。</code>(color, near, far)<br>  <code>FogExp2 指数雾，雾的密度是随着距离指数增大的</code>(color, density默认值0.00025)<br>5、</p>
+<h2 id="形状"><a href="#形状" class="headerlink" title="形状"></a>形状</h2><p><code>BoxGeometry</code> – 长方体<br><code>CircleGeometry</code> – 圆形平面<br><code>CylinderGeometry</code> – 圆柱体<br><code>PlaneGeometry</code> – 方形平面<br><code>RingGeometry</code> – 环形平面<br><code>SphereGeometry</code> – 球形<br><code>TextGeometry</code> – 文字<br><code>TorusGeometry</code> – 圆环<br><code>TubeGeometry</code> – 圆管</p>
+<h2 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h2><p><code>MeshBasicMaterial</code>: 忽略光线的作用<br><code>MeshLambertMaterial</code> – 漫反射材质，用来模拟真实环境下的物体，例如木材，石料等物质的反光情况<br><code>MeshPhongMaterial</code> – 镜面反射材质，用来模拟镜子，金属等拥有高光的物体就比较合适<br><code>MeshDepthMaterial</code> – 根据物体上每一点到摄像机的远近来显示颜色，远的显示黑色，近的显示白色<br><code>MeshNormalMaterial</code> – 根据物体上每一面的法向量方向来显示颜色</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Mesh, MeshBasicMaterial, BoxGeometry &#125; <span class="keyword">from</span> <span class="string">'three'</span>;</span><br><span class="line"><span class="keyword">var</span> geometry = <span class="keyword">new</span> BoxGeometry(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>); <span class="comment">// 创建一个长方体，用来定义物体的形状</span></span><br><span class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> MeshBasicMaterial(&#123; <span class="attr">color</span>: <span class="number">0xff0000</span> &#125;); <span class="comment">// 创建一个材质，用来定义物体的颜色</span></span><br><span class="line"><span class="keyword">var</span> mesh = <span class="keyword">new</span> Mesh(geometry, material); <span class="comment">// 使用形状和素材，来定义物体</span></span><br><span class="line">scene.add(mesh);</span><br><span class="line">renderer.render(scene, camera);</span><br></pre></td></tr></table></figure>
+<h2 id="纹理贴图"><a href="#纹理贴图" class="headerlink" title="纹理贴图"></a>纹理贴图</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过 TextureLoader 来加载一个gif图作为纹理，并且把这个纹理通过map属性映射到了材质上，加上材质后，整个物体就更加真实了</span></span><br><span class="line"><span class="keyword">import</span> &#123; TextureLoader, MeshLambertMaterial &#125; <span class="keyword">from</span> <span class="string">'three'</span>;</span><br><span class="line"><span class="keyword">var</span> texture = <span class="keyword">new</span> TextureLoader().load(‘./assets/texture/crate.gif’)</span><br><span class="line"><span class="keyword">var</span> material = <span class="keyword">new</span> MeshLambertMaterial(&#123; <span class="attr">map</span>: texture &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="3D动画"><a href="#3D动画" class="headerlink" title="3D动画"></a>3D动画</h2><p><strong>原理：定时连拍渲染器</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  requestAnimationFrame(render);</span><br><span class="line">  update();</span><br><span class="line">  renderer.render(scene, camera);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// update your view</span></span><br><span class="line">  <span class="comment">// 让box旋转</span></span><br><span class="line">  box.rotation.x += <span class="number">0.005</span>;</span><br><span class="line">  box.rotation.y += <span class="number">0.01</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h2><p>1、<code>AmbientLight</code>：环境光会均匀的照亮场景中的所有物体。环境光不能用来投射阴影，因为它没有方向。</p>
+
+      
+    </div>
+    <!-- <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/02/27/[Threejs]Threejs基础知识/" title="Threejs 基础知识" target="_blank" rel="external">http://yoursite.com/2019/02/27/[Threejs]Threejs基础知识/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/rubyliuqq" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/rubyliuqq" target="_blank"><span class="text-dark">Rubyliuqq</span><small class="ml-1x">Front-end Development Engineer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div> -->
+  </article>
+  <!-- 
+    
+  <section id="comments">
+  	
+      
+
+    
+   
+  </section>
+
+
+   -->
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/02/27/[MattarJS]Matterjs基础知识/" title="Matterjs 基础知识"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/02/24/[Fabricjs]Fabricjs API整理/" title="Fabricjs API 整理"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button> -->
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/avatar.jpg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/avatar.jpg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/rubyliuqq" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/rubyliuqq" target="_blank"> cofess </a>base on <a href="https://github.com/rubyliuqq" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+    <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script>
+        //利用 FancyBox 实现点击图片放大
+        $(document).ready(function() {
+            $('article img').not('[hidden]').not('.panel-body img').each(function () {
+                var $image = $(this);
+                var imageCaption = $image.attr('alt');
+                var $imageWrapLink = $image.parent('a');
+                if ($imageWrapLink.length < 1) {
+                var src = this.getAttribute('src');
+                var idx = src.lastIndexOf('?');
+                if (idx != -1) {
+                    src = src.substring(0, idx);
+                }
+                $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+                }
+                $imageWrapLink.attr('data-fancybox', 'images');
+                if (imageCaption) {
+                $imageWrapLink.attr('data-caption', imageCaption);
+                }
+            });
+            $().fancybox({
+                selector: '[data-fancybox="images"]',
+                hash: false,
+                loop: false,
+            }); 
+        });
+    </script>
+    
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: [''],
+            id: location.pathname,
+            distractionFreeMode: true
+        })
+        gitalk.render('comments')
+    </script>
+    
+
+    
+    
+
+
+
+</body>
+</html>

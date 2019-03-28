@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name=referrer content=never>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Matterjs 基础知识 | Hexo</title>
+  <meta name="description" content="Matter.js 是一个用于 Web 的 JavaScript 2D 物理引擎库 Matter.js 支持的特性   刚体 复合体 复合材料     凹面和凸面 物理特性（质量、面积、密度等） 弹性（弹性和非弹性碰撞）   碰撞（粗略阶段、中间阶段、精细阶段） 稳定的堆叠和静止 动量守恒   摩擦力和阻力 事件监听 约束   重力 睡眠和静态物体 圆角（倒角）   视图（平移、缩放） 碰撞查询（">
+<meta name="keywords" content="MattarJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matterjs 基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/[MattarJS]Matterjs基础知识/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Matter.js 是一个用于 Web 的 JavaScript 2D 物理引擎库 Matter.js 支持的特性   刚体 复合体 复合材料     凹面和凸面 物理特性（质量、面积、密度等） 弹性（弹性和非弹性碰撞）   碰撞（粗略阶段、中间阶段、精细阶段） 稳定的堆叠和静止 动量守恒   摩擦力和阻力 事件监听 约束   重力 睡眠和静态物体 圆角（倒角）   视图（平移、缩放） 碰撞查询（">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-28T06:25:50.553Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Matterjs 基础知识">
+<meta name="twitter:description" content="Matter.js 是一个用于 Web 的 JavaScript 2D 物理引擎库 Matter.js 支持的特性   刚体 复合体 复合材料     凹面和凸面 物理特性（质量、面积、密度等） 弹性（弹性和非弹性碰撞）   碰撞（粗略阶段、中间阶段、精细阶段） 稳定的堆叠和静止 动量守恒   摩擦力和阻力 事件监听 约束   重力 睡眠和静态物体 圆角（倒角）   视图（平移、缩放） 碰撞查询（">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/[MattarJS]Matterjs基础知识/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <!-- font-awesome CSS -->
+  <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+    
+    
+
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/rubyliuqq" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Rubyliuqq</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Front-end Development Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Hangzhou China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/rubyliuqq" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Canvas/">Canvas</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Command/">Command</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/H5游戏/">H5游戏</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS设计模式/">JS设计模式</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础知识/">基础知识</a><span class="category-list-count">32</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编码规范/">编码规范</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FabricJS/">FabricJS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS设计模式/">JS设计模式</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MattarJS/">MattarJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ThreeJs/">ThreeJs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cli/">cli</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/commander/">commander</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CSS/" style="font-size: 13px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 13px;">CSS3</a> <a href="/tags/ES6/" style="font-size: 13.6px;">ES6</a> <a href="/tags/FabricJS/" style="font-size: 13.2px;">FabricJS</a> <a href="/tags/H5/" style="font-size: 13.2px;">H5</a> <a href="/tags/HTTP/" style="font-size: 13px;">HTTP</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/JS设计模式/" style="font-size: 13.6px;">JS设计模式</a> <a href="/tags/MattarJS/" style="font-size: 13px;">MattarJS</a> <a href="/tags/ThreeJs/" style="font-size: 13px;">ThreeJs</a> <a href="/tags/Vue/" style="font-size: 13.4px;">Vue</a> <a href="/tags/canvas/" style="font-size: 13px;">canvas</a> <a href="/tags/cli/" style="font-size: 13.2px;">cli</a> <a href="/tags/commander/" style="font-size: 13px;">commander</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/eslint/" style="font-size: 13px;">eslint</a> <a href="/tags/git/" style="font-size: 13.2px;">git</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/node/" style="font-size: 13px;">node</a> <a href="/tags/web/" style="font-size: 13px;">web</a> <a href="/tags/webpack/" style="font-size: 13.8px;">webpack</a> <a href="/tags/代码规范/" style="font-size: 13.2px;">代码规范</a> <a href="/tags/移动端/" style="font-size: 13px;">移动端</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matter-js-支持的特性"><span class="toc-number">1.</span> <span class="toc-text">Matter.js 支持的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础操作"><span class="toc-number">2.</span> <span class="toc-text">基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、Engine、Render、World、Bodies"><span class="toc-number">2.1.</span> <span class="toc-text">1、Engine、Render、World、Bodies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、Constraint（约束）"><span class="toc-number">2.2.</span> <span class="toc-text">2、Constraint（约束）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、Composites（复合体）"><span class="toc-number">2.3.</span> <span class="toc-text">3、Composites（复合体）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、MouseConstraint（鼠标约束）"><span class="toc-number">2.4.</span> <span class="toc-text">4、MouseConstraint（鼠标约束）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、Vector（向量）"><span class="toc-number">2.5.</span> <span class="toc-text">5、Vector（向量）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、Events（事件）"><span class="toc-number">2.6.</span> <span class="toc-text">6、Events（事件）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、施加力"><span class="toc-number">2.7.</span> <span class="toc-text">7、施加力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、重力"><span class="toc-number">2.8.</span> <span class="toc-text">8、重力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、睡眠状态"><span class="toc-number">2.9.</span> <span class="toc-text">9、睡眠状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、摩擦力"><span class="toc-number">2.10.</span> <span class="toc-text">10、摩擦力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、时间缩放"><span class="toc-number">2.11.</span> <span class="toc-text">11、时间缩放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、Matter-js-调试"><span class="toc-number">2.12.</span> <span class="toc-text">12、Matter.js 调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、参考Matter-js设置碰撞规则"><span class="toc-number">2.13.</span> <span class="toc-text">13、参考Matter.js设置碰撞规则</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-[MattarJS]Matterjs基础知识" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Matterjs 基础知识
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/02/27/[MattarJS]Matterjs基础知识/" class="article-date">
+	  <time datetime="2019-02-27T08:50:29.000Z" itemprop="datePublished">2019-02-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/H5游戏/">H5游戏</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/MattarJS/">MattarJS</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/02/27/[MattarJS]Matterjs基础知识/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>Matter.js 是一个用于 Web 的 JavaScript 2D 物理引擎库</p>
+<h2 id="Matter-js-支持的特性"><a href="#Matter-js-支持的特性" class="headerlink" title="Matter.js 支持的特性"></a>Matter.js 支持的特性</h2><table>
+<thead>
+<tr>
+<th>刚体</th>
+<th style="text-align:right">复合体</th>
+<th style="text-align:center">复合材料</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>凹面和凸面</td>
+<td style="text-align:right">物理特性（质量、面积、密度等）</td>
+<td style="text-align:center">弹性（弹性和非弹性碰撞）</td>
+</tr>
+<tr>
+<td>碰撞（粗略阶段、中间阶段、精细阶段）</td>
+<td style="text-align:right">稳定的堆叠和静止</td>
+<td style="text-align:center">动量守恒</td>
+</tr>
+<tr>
+<td>摩擦力和阻力</td>
+<td style="text-align:right">事件监听</td>
+<td style="text-align:center">约束</td>
+</tr>
+<tr>
+<td>重力</td>
+<td style="text-align:right">睡眠和静态物体</td>
+<td style="text-align:center">圆角（倒角）</td>
+</tr>
+<tr>
+<td>视图（平移、缩放）</td>
+<td style="text-align:right">碰撞查询（射线追踪、区域测试）</td>
+<td style="text-align:center">时间缩放（减速、加速）</td>
+</tr>
+<tr>
+<td>Canvas 渲染器（支持向量和纹理）</td>
+<td style="text-align:right">MatterTools 工具（创建、测试和调试）</td>
+<td style="text-align:center">世界状态序列化，需要 resurrect.js</td>
+</tr>
+<tr>
+<td>跨浏览器（Chrome、Firefox、Safari、IE8+）</td>
+<td style="text-align:right">兼容移动端（触摸、响应）</td>
+<td style="text-align:center">原生 JS 实现</td>
+</tr>
+</tbody>
+</table>
+<h2 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h2><h3 id="1、Engine、Render、World、Bodies"><a href="#1、Engine、Render、World、Bodies" class="headerlink" title="1、Engine、Render、World、Bodies"></a>1、Engine、Render、World、Bodies</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建引擎，渲染器，添加世界，生成身体模型。</span></span><br><span class="line"><span class="comment">// Engine是引擎，Render是渲染器，World是表演环境，Bodies可以用来创建各种形状的物体。</span></span><br><span class="line"><span class="keyword">var</span> Engine = Matter.Engine,</span><br><span class="line">    Render = Matter.Render,</span><br><span class="line">    World = Matter.World,</span><br><span class="line">    Bodies = Matter.Bodies</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建引擎实例与引擎世界。</span></span><br><span class="line"><span class="keyword">var</span> engine = Engine.create(),</span><br><span class="line">    world = engine.world</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建渲染器实例。</span></span><br><span class="line"><span class="comment">// render(渲染器)将要渲染的物理引擎是之前所创建的engine，而渲染的对象是html网页的body。</span></span><br><span class="line"><span class="keyword">var</span> render = Render.create(&#123;</span><br><span class="line">    engine: engine,</span><br><span class="line">    element: <span class="built_in">document</span>.body</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 运行渲染器，运行引擎。</span></span><br><span class="line">Engine.run(engine)</span><br><span class="line">Render.run(render)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加物体</span></span><br><span class="line"><span class="keyword">var</span> boxA = Bodies.rectangle(<span class="number">500</span>, <span class="number">170</span>, <span class="number">40</span>, <span class="number">260</span>), <span class="comment">// 矩形物体。刷新时会自由落体。500和170是矩形的中心所在位置</span></span><br><span class="line">  ground = Bodies.rectangle(<span class="number">400</span>, <span class="number">600</span>, <span class="number">600</span>, <span class="number">100</span>, &#123; <span class="attr">isStatic</span>: <span class="literal">true</span> &#125;) <span class="comment">// 生成地面，isStatic表示静止</span></span><br><span class="line">World.add(world,[boxA,ground]) <span class="comment">// 将物体添加到World世界之中。</span></span><br></pre></td></tr></table></figure>
+<p><code>Matter.Engine</code> 模块包含了创建和处理引擎的方法，引擎是负责管理和更新模拟世界的控制器，引擎可以控制时间的缩放，可以检测所有的碰撞事件，并且拿到所有碰撞的物体对（pairs）。</p>
+<p>在 Matter.js 中任何的物体都需要一个容身处，而存放这些物体的地方，我们称之为世界，物体必须添加到世界里，然后由引擎运行这个世界。而创建世界需要使用到 <code>Matter.World</code> 模块，该模块包含了用于创建和操作世界的方法，一个 Matter.World 相当于一个复合物体，物体、约束、复合物体的聚合体，其次世界还有额外的一些属性，比如重力、边界。</p>
+<p><code>Matter.Render</code> 是将实例渲染到 Canvas 中的渲染器，控制视图层的样式，它的主要作用是用于开发和调试，默认情况下 Matter.Render 将只显示物体的线框（轮廓），这对于开发和调试很有帮助，但如果需要使用到全局实体渲染则需要将线框模式关闭 <code>render.options.wireframes = false</code>，另外它同样也适合制作一些简单的游戏，因为它包括了一些绘图选项、线框、向量、Sprite 精灵和视窗功能。</p>
+<p>物体或者叫刚体，在物理引擎里特指坚硬的物体，具有固定的形状，不能形变。<br>刚体可以用于表示一个箱子、一个球或是一块木头，每个物体都有自己的物理属性，质量、速度、摩擦力、角度等，还可以设置刚体的标记。<br><code>Matter.Bodies</code> 模块中内置了几种刚体，<code>矩形 Matter.rectangle</code>、<code>多边形 Matter.polygon</code>、<code>圆形 Matter.circle</code> 、<code>梯形 Matter.trapezoid</code> 等等。</p>
+<h3 id="2、Constraint（约束）"><a href="#2、Constraint（约束）" class="headerlink" title="2、Constraint（约束）"></a>2、Constraint（约束）</h3><p>约束可理解为通过一条线，将刚体 A 和刚体 B 两个刚体连接起来，被约束的两个刚体由于被连接在了一起，移动就相互受到了限制。<br><code>Matter.Constraint</code>模块包含了用于创建和处理约束的方法，这个约束可以很宽松，也可以很紧绷，还可以定义约束的距离，约束具有弹性，可以用来当作橡皮筋。<br><code>Constraint.create(bodyA, pointA, bodyB, pointB, length, stiffness)</code><br>pointA和pointB为两个向量，如果不赋值，则默认为0向量，物体的约束点默认在中心位置，否则，物体的对应的约束点为中心位置加上所赋的向量值。</p>
+<h3 id="3、Composites（复合体）"><a href="#3、Composites（复合体）" class="headerlink" title="3、Composites（复合体）"></a>3、Composites（复合体）</h3><p>由刚体和复合材料通过约束组合在一起的就叫做复合体。<br>复合体对外当作一个刚体，复合体的物理属性是通过所包含的刚体的属性综合计算出来的。<br><code>Matter.Composite</code> 模块包含用于创建和处理复合体的方法，另外还有一个 Matter.Composites 模块，提供了几种特别的复合材料，例如 <code>链 Composites.chain</code>、<code>牛顿摆球 Composites.newtonsCradle</code>、<code>软体 Composites.softBody</code>、<code>汽车 Composites.car</code> 、<code>堆叠 Composites.stack</code> 等等。</p>
+<p><code>Composites.chain()</code>可以将已有的stack物体堆链接在一起，构成一个整体，里面的参数为已有的物体堆stack，链接点距离物体中心的x和y方向的偏移量。<br><code>Composites.chain = function(composite, xOffsetA, yOffsetA, xOffsetB, yOffsetB, options)</code><br>参数composite即为传入的物体堆，从第一个物体开始，到倒数第二个物体截止，每个物体和下一个物体链接。<br>xOffsetA, yOffsetA为每对链接的第一个物体的链接点距离中心位置的偏移<code>百分比</code>，之所以是百分比，是因为pointA: { x: bodyAWidth <em> xOffsetA, y: bodyAHeight </em> yOffsetA }，<br>pointA的x和y属性为实际的偏移量，是由物体的实际宽度乘以偏移百分比而得到。</p>
+<p><code>堆叠 Composites.stack(xx, yy, columns, rows, columnGap, rowGap, callback)</code><br>xx, yy分别为物体堆中第一个物体的x和y坐标<br>columns 和rows 分别为所要创建的物体堆的列数和行数<br>columnGap 和rowGap 分别为物体与物体之间的列间隙和行间隙<br>var body = callback(x, y, column, row, lastBody, i); 可以看出callback为生成的具体物体的方法。</p>
+<p><code>牛顿摆球 Composites.newtonsCradle(x, y, num, radius, lineLen)</code>为内置函数，可以生产牛顿摆<br>其中：x, y为第一个摆球的横纵坐标，num为摆球的个数，radius为半径，lineLen为绳子长度</p>
+<p><code>软体 Composites.softBody(xx, yy, columns, rows, columnGap, rowGap, crossBrace, particleRadius, particleOptions, constraintOptions)</code><br>particleRadius: 球半径<br>crossBrace<br>particleOptions<br>constraintOptions</p>
+<p><code>Composites.car(xx, yy, width, height, raduis)函数，可以生成简易小车。由一个矩形和两个圆形构成。两个圆形的圆心在矩形的两条宽的中心。</code><br>xx, yy 两个参数为小车中心的x坐标和y坐标<br>width, height 为矩形车身的长和宽<br>raduis 为轮子的半径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Composites.stack 堆叠</span></span><br><span class="line"><span class="keyword">var</span> stackRect = Composites.stack(<span class="number">250</span>, <span class="number">100</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Bodies.rectangle(x, y, <span class="number">80</span>, <span class="number">20</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> stackCircle = Composites.stack(<span class="number">380</span>, <span class="number">100</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> Bodies.circle(x, y, <span class="number">20</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> ground = Bodies.rectangle(<span class="number">500</span>, <span class="number">600</span>, <span class="number">1000</span>, <span class="number">100</span>, &#123; <span class="attr">isStatic</span>:<span class="literal">true</span> &#125;)</span><br><span class="line">World.add(world, [stackRect, ground])</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<h3 id="4、MouseConstraint（鼠标约束）"><a href="#4、MouseConstraint（鼠标约束）" class="headerlink" title="4、MouseConstraint（鼠标约束）"></a>4、MouseConstraint（鼠标约束）</h3><p>如果你想让刚体与用户之间有交互，那就要在鼠标和刚体之间建立连接，也就是鼠标和刚体间的约束，<code>Matter.MouseConstraint</code> 模块包含用于创建鼠标约束的方法，提供通过鼠标或触摸（移动端时）移动刚体的能力，可以设置什么标记的物体才能被鼠标操纵，创建鼠标约束后，可以捕获到鼠标的各类事件。</p>
+<h3 id="5、Vector（向量）"><a href="#5、Vector（向量）" class="headerlink" title="5、Vector（向量）"></a>5、Vector（向量）</h3><p><code>Matter.Vector</code> 模块包含用于创建和操纵向量的方法，向量是引擎有关几何操作行为的基础，修改物体的运动状态基本都是使用向量来控制，例如赋予物体一个力，或者设置物体的速度、旋转角度，并且内置了多个向量的求解函数：向量积、标量积、格式化、垂直向量等等。</p>
+<h3 id="6、Events（事件）"><a href="#6、Events（事件）" class="headerlink" title="6、Events（事件）"></a>6、Events（事件）</h3><p><code>Matter.Events</code> 模块包含了绑定、移除和触发对象的方法。<br><code>绑定事件 Matter.Events.on(object, eventNames, callback)</code><br><code>移除事件 Matter.Events.off(object, eventNames, callback)</code><br><code>触发事件 Matter.Events.trigger(object, eventNames, event)</code></p>
+<h3 id="7、施加力"><a href="#7、施加力" class="headerlink" title="7、施加力"></a>7、施加力</h3><p><code>Matter.Body.applyForce(body, position, force)</code>方法可以给刚体施加一个力，<br>传入 X 和 Y 轴需要的力度值，通过这个方法你可以去模拟踢一个足球、投一个篮球的效果。</p>
+<h3 id="8、重力"><a href="#8、重力" class="headerlink" title="8、重力"></a>8、重力</h3><p>可以设置 X、Y 轴的重力值，默认都为 1，参数在 0、1、-1 中选择使用。<br>// 实现反重力效果<br>engine.world.gravity.y = -1;<br>// 无重力效果<br>engine.world.gravity.y = 0;</p>
+<h3 id="9、睡眠状态"><a href="#9、睡眠状态" class="headerlink" title="9、睡眠状态"></a>9、睡眠状态</h3><p>通过 enableSleeping: true 开启睡眠模式后，当刚体处于不受作用状态时，会进入睡眠状态，这样可以有效的提高引擎的性能，当物体被其他物体碰撞或者对刚体施加力时，刚体会被叫醒，引擎会继续对其进行计算模拟。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启睡眠状态</span></span><br><span class="line"><span class="keyword">var</span> engine = Engine.create(&#123;</span><br><span class="line">    enableSleeping: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 还可以针对进入睡眠状态的刚体进行监听，比如将刚体移出世界</span></span><br><span class="line">Event.on(ball, <span class="string">"sleepStart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    World.remove(engine.world, ball);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="10、摩擦力"><a href="#10、摩擦力" class="headerlink" title="10、摩擦力"></a>10、摩擦力</h3><p>摩擦力在 Matter.js 中分别提供了三种：摩擦力 friction、空气摩擦力 frictionAir 以及静止摩擦力 frictionStatic。friction 默认值是 0.1，取值范围在 0 - 1，当值为 0 意味着刚体可以摩擦力的无限滑动，1 意味着对刚体施加力后会立刻停止，frictionAir 默认值是 0.01，取值范围 0 - 1，当值为 0 意味着刚体在空间中移动时速度永远不会减慢，值越高时刚体在空间的移动速度越慢，frictionStatic 默认值 0.5，当值为 0 时意味着刚体几乎是静止的，值越高时意味着需要移动刚体所需的力就越大。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 摩擦力</span></span><br><span class="line">Bodies.rectangle(<span class="number">300</span>, <span class="number">70</span>, <span class="number">40</span>, <span class="number">40</span>, &#123;</span><br><span class="line">    friction: <span class="number">0.01</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 空气摩擦力</span></span><br><span class="line">Bodies.rectangle(<span class="number">300</span>, <span class="number">70</span>, <span class="number">40</span>, <span class="number">40</span>, &#123;</span><br><span class="line">    frictionAir: <span class="number">0.05</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 静止摩擦力</span></span><br><span class="line">Bodies.rectangle(<span class="number">300</span>, <span class="number">70</span>, <span class="number">40</span>, <span class="number">40</span>, &#123;</span><br><span class="line">    frictionStatic: <span class="number">1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="11、时间缩放"><a href="#11、时间缩放" class="headerlink" title="11、时间缩放"></a>11、时间缩放</h3><p>可以控制全局的时间，当值为 0 时为冻结模拟，值为 0.1 给出慢动作效果，值为 1.2 时给出加速效果。<br><code>engine.timing.timeScale = 0.1;</code></p>
+<h3 id="12、Matter-js-调试"><a href="#12、Matter-js-调试" class="headerlink" title="12、Matter.js 调试"></a>12、Matter.js 调试</h3><p>除了前面讲 Matter.Render 模块的时候提到的线框模式 wireframes 便于调试外，Matter.Render 模块其实还为我们提供了以下几种方法，便于我们自定义调试选项：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> render = Render.create(&#123;</span><br><span class="line">    element: <span class="built_in">document</span>.body,</span><br><span class="line">    engine: engine,</span><br><span class="line">    options: &#123;</span><br><span class="line">        width: <span class="number">800</span>,</span><br><span class="line">        height: <span class="number">600</span>,</span><br><span class="line">        pixelRatio: <span class="number">1</span>, <span class="comment">// 设置像素比</span></span><br><span class="line">        background: <span class="string">'#fafafa'</span>, <span class="comment">// 全局渲染模式时背景色</span></span><br><span class="line">        wireframeBackground: <span class="string">'#222'</span>, <span class="comment">// 线框模式时背景色</span></span><br><span class="line">        hasBounds: <span class="literal">false</span>,</span><br><span class="line">        enabled: <span class="literal">true</span>,</span><br><span class="line">        wireframes: <span class="literal">true</span>, <span class="comment">// 线框模式</span></span><br><span class="line">        showSleeping: <span class="literal">true</span>, <span class="comment">// 刚体睡眠状态</span></span><br><span class="line">        showDebug: <span class="literal">false</span>, <span class="comment">// Debug 信息</span></span><br><span class="line">        showBroadphase: <span class="literal">false</span>, <span class="comment">// 粗测阶段</span></span><br><span class="line">        showBounds: <span class="literal">false</span>, <span class="comment">// 刚体的界限</span></span><br><span class="line">        showVelocity: <span class="literal">false</span>, <span class="comment">// 移动刚体时速度</span></span><br><span class="line">        showCollisions: <span class="literal">false</span>, <span class="comment">// 刚体碰撞点</span></span><br><span class="line">        showSeparations: <span class="literal">false</span>, <span class="comment">// 刚体分离</span></span><br><span class="line">        showAxes: <span class="literal">false</span>, <span class="comment">// 刚体轴线</span></span><br><span class="line">        showPositions: <span class="literal">false</span>, <span class="comment">// 刚体位置</span></span><br><span class="line">        showAngleIndicator: <span class="literal">false</span>, <span class="comment">// 刚体转角指示</span></span><br><span class="line">        showIds: <span class="literal">false</span>, <span class="comment">// 显示每个刚体的 ID</span></span><br><span class="line">        showVertexNumbers: <span class="literal">false</span>, <span class="comment">// 刚体顶点数</span></span><br><span class="line">        showConvexHulls: <span class="literal">false</span>, <span class="comment">// 刚体凸包点</span></span><br><span class="line">        showInternalEdges: <span class="literal">false</span>, <span class="comment">// 刚体内部边界</span></span><br><span class="line">        showMousePosition: <span class="literal">false</span> <span class="comment">// 鼠标约束线</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="13、参考Matter-js设置碰撞规则"><a href="#13、参考Matter-js设置碰撞规则" class="headerlink" title="13、参考Matter.js设置碰撞规则"></a>13、参考Matter.js设置碰撞规则</h3><p>Matter相互碰撞提供了collisionFilter属性，支持三种属性，分别是 <code>group</code> <code>category</code> <code>mask</code></p>
+<p>使用三种属性，就能设计出很复杂的碰撞关系。其中规则如下：</p>
+<p>第一种情况，在两个group相等的前提下，如果任意group大于零，则两者始终碰撞，比如大家都是1，这大家相互直接始终碰撞；如果任意group小于0，比如大家都是-1，则大家永远也不碰撞。除上述两种情况，则根据category和mask进行判定<br>第二张情况，在两个group不相等的前提下，根据category和mask进行判定，category，mask判定规则：<br>category代表一个碰撞分类，其值可为1，2，4，8…直到 2^31，每个刚体设置一个值<br>mask为碰撞集合（category集合），是category相与的结果值，比如接受2，4类型，其值为6<br>a和b碰撞情况是：a的mask必须包含b的category，同时b的mask也必须包含a的category，即<br>(a.category &amp; b.mask) !== 0 &amp;&amp; (b.category &amp; a.mask) !== 0</p>
+<p>1、group 属性为数字类型。在两个物体的group属性值相同的前提下，如果这个数字为负数，则这两个物体不会碰撞，如果这个数字为正数，则这两个物体会碰撞。<br>如果两个物体的group属性不相同，或者有一个为0（或两个都为0），则需要根据其他两个属性来判断碰撞规则。<br>2、category属性为16进制数字，默认为0x0001，其值只能为2的幂级数，如0x0002,0x0004,0x0008，（比如，0x0007是不合法的，不会触发碰撞规则）<br>3、mask属性设置可以与该物体碰撞的category。</p>
+<p>eg：<br>A物体的category为0x0002，B物体的category为0x0004<br>C物体若要与A物体碰撞，其mask应为A的category，即0x0002<br>C物体若要与B物体碰撞，其mask应为B的category，即0x0004<br>C物体若要与A物体、B物体同时碰撞，其mask应同时包含为A和B的category，即 0x0002 | 0x0004</p>
+<p><code>category必须与mask配合使用才有效，因为mask的默认值包含了所有的category，默认可以与所有物体发生碰撞。</code></p>
+
+      
+    </div>
+    <!-- <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/02/27/[MattarJS]Matterjs基础知识/" title="Matterjs 基础知识" target="_blank" rel="external">http://yoursite.com/2019/02/27/[MattarJS]Matterjs基础知识/</a>
+    </li>
+    
+    
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/rubyliuqq" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/rubyliuqq" target="_blank"><span class="text-dark">Rubyliuqq</span><small class="ml-1x">Front-end Development Engineer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div> -->
+  </article>
+  <!-- 
+    
+  <section id="comments">
+  	
+      
+
+    
+   
+  </section>
+
+
+   -->
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/02/27/[Threejs]Threejs基础知识/" title="Threejs 基础知识"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button> -->
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/avatar.jpg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/avatar.jpg" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/rubyliuqq" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/rubyliuqq" target="_blank"> cofess </a>base on <a href="https://github.com/rubyliuqq" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+    <link href="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script>
+        //利用 FancyBox 实现点击图片放大
+        $(document).ready(function() {
+            $('article img').not('[hidden]').not('.panel-body img').each(function () {
+                var $image = $(this);
+                var imageCaption = $image.attr('alt');
+                var $imageWrapLink = $image.parent('a');
+                if ($imageWrapLink.length < 1) {
+                var src = this.getAttribute('src');
+                var idx = src.lastIndexOf('?');
+                if (idx != -1) {
+                    src = src.substring(0, idx);
+                }
+                $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+                }
+                $imageWrapLink.attr('data-fancybox', 'images');
+                if (imageCaption) {
+                $imageWrapLink.attr('data-caption', imageCaption);
+                }
+            });
+            $().fancybox({
+                selector: '[data-fancybox="images"]',
+                hash: false,
+                loop: false,
+            }); 
+        });
+    </script>
+    
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+  
+    
+    
+    
+        <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+    
+    
+    
+        
+
+
+    
+    
+        
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: [''],
+            id: location.pathname,
+            distractionFreeMode: true
+        })
+        gitalk.render('comments')
+    </script>
+    
+
+    
+    
+
+
+
+</body>
+</html>
